@@ -145,6 +145,10 @@ Packet analysis included identifying common protocols such as:
 
 Wireshark provided detailed packet information including source and destination addresses, protocol types and packet contents, demonstrating how captured traffic can be analysed during network troubleshooting.
 
+![Wireshark Packet Analysis 1](11.jpg)
+
+![Wireshark Packet Analysis 2](12.jpg)
+
 ---
 
 ## Skills Demonstrated
