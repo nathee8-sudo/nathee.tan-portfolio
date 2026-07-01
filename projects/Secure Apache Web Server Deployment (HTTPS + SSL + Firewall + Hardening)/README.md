@@ -84,6 +84,8 @@ sudo apt-get install apache2
 sudo systemctl status apache2
 ```
 
+![Apache Installation Output](1.jpg)
+
 Test HTTP access:
 
 http://localhost
