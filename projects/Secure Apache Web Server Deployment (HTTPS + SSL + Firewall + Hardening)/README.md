@@ -160,6 +160,12 @@ sudo cp pair.key /etc/apache2/selfsignedcerts/
 sudo cp certificate.crt /etc/apache2/selfsignedcerts/
 ```
 
+![Certs folder creation - 14](14.jpg)
+
+![Copy private key - 15](15.jpg)
+
+![Copy certificate - 16](16.jpg)
+
 4. Enable HTTPS in Apache
 
 Edit SSL config:
