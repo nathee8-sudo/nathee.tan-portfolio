@@ -106,14 +106,6 @@ sudo ufw allow 3306
 sudo ufw status numbered
 ```
 
-To deny HTTP:
-
-```bash
-sudo ufw deny 80/tcp
-```
-
-UFW screenshots
-
 ![UFW Rules - 3](3.jpg)
 
 ![UFW Rules - 4](4.jpg)
@@ -124,9 +116,15 @@ UFW screenshots
 
 ![UFW Rules - 7](7.jpg)
 
-![UFW Rules - 8](8.jpg)
-
 ![UFW Rules - 9](9.jpg)
+
+To deny HTTP:
+
+```bash
+sudo ufw deny 80/tcp
+```
+
+![UFW Deny HTTP - 10](10.jpg)
 
 3. Generate SSL Certificate (OpenSSL)
 
