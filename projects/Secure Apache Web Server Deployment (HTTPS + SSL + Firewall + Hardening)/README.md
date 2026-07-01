@@ -1,193 +1,254 @@
-# Secure Apache Web Server Deployment (HTTPS + SSL + Firewall + Hardening)
+# Secure Apache Web Server Deployment & Hardening on Ubuntu
 
-## Overview
+This project demonstrates the deployment, configuration, and hardening of an Apache web server on Ubuntu Linux.
+It includes HTTPS configuration using a self‑signed SSL certificate, firewall rules, and multiple security hardening techniques.
 
-This project documents the deployment and hardening of an Apache web server with HTTPS using SSL/TLS, firewall configuration, and common system hardening steps. The lab demonstrates installing and configuring Apache, obtaining and configuring TLS certificates (Let's Encrypt / certbot), tuning SSL parameters for security, configuring a host-based firewall, and implementing basic server hardening.
+This project is based on Lab 3.3 (Web Server & Firewall) and Lab 6.3 (PKI & Apache Hardening).
 
----
+📌 Overview
 
-## Objectives
+The goal of this project is to deploy a functional Apache web server and secure it using HTTPS, firewall rules, and server hardening techniques.
+This demonstrates practical skills in:
 
-The objectives of this project are to:
+- Linux server administration
+- Web server configuration
+- SSL/TLS & PKI
+- Firewall management
+- Web security hardening
+- Vulnerability scanning and validation
 
-- Install and configure Apache HTTP Server.
-- Enable HTTPS using trusted SSL/TLS certificates.
-- Configure strong TLS settings and disable weak ciphers and protocols.
-- Configure a host firewall to limit incoming services (e.g., UFW/iptables).
-- Apply basic system and Apache hardening (file permissions, modules, headers, logging).
-- Test and verify the server is secure and reachable over HTTPS.
+🛠️ Technologies Used
 
----
-
-## Lab Environment
-
-### Hypervisor / Platform
-
-- VirtualBox, VMware, or cloud instance (AWS/GCP/Azure)
-
-### Operating System
-
-- Ubuntu Server (20.04 / 22.04) or Debian
-
-### Tools Used
-
-- Apache HTTP Server (httpd / apache2)
-- certbot (Let's Encrypt)
+- Ubuntu Linux
+- Apache2
 - OpenSSL
-- UFW (Uncomplicated Firewall) or iptables/nftables
-- curl, openssl s_client
-- browser for manual verification
+- UFW Firewall
+- ModSecurity (WAF)
+- ModEvasive (Anti‑DDoS)
+- Nmap (Kali Linux)
 
----
+🌐 Architecture Diagram
 
-## Part 1 — Apache Installation and Basic Configuration
-
-1. Update package index and install Apache:
-
-```bash
-sudo apt update
-sudo apt install -y apache2
+```
+Code
+┌──────────────────────────────┐
+│        Kali Linux (Scanner)  │
+│   - Nmap scanning            │
+│   - Security validation      │
+└──────────────┬──────────────┘
+               │
+               │  HTTP / HTTPS
+               ▼
+┌──────────────────────────────┐
+│      Ubuntu Web Server       │
+│   Apache2 + SSL + Hardening  │
+│   - Self-signed certificate  │
+│   - UFW firewall rules       │
+│   - ModSecurity WAF          │
+│   - ModEvasive anti-DDoS     │
+└──────────────────────────────┘
 ```
 
-2. Verify Apache is running and enable at boot:
+📁 Project Structure
+
+```
+Code
+/apache-secure-server
+│
+├── README.md
+├── configs/
+│   ├── default-ssl.conf
+│   ├── security.conf
+│   └── apache2.conf
+│
+├── certs/
+│   ├── certificate.crt
+│   └── pair.key (private key not uploaded)
+│
+└── screenshots/
+    ├── http-access.png
+    ├── https-access.png
+    ├── ufw-rules.png
+    ├── nmap-before.png
+    └── nmap-after.png
+```
+
+🚀 Implementation Steps
+
+1. Apache Installation
 
 ```bash
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get install apache2
 sudo systemctl status apache2
-sudo systemctl enable --now apache2
 ```
 
-3. Create a site virtual host file for your domain (example: /etc/apache2/sites-available/example.com.conf) and set DocumentRoot, ServerName, and logging.
+Test HTTP access:
 
-4. Enable the site and reload Apache:
+http://localhost
+
+http://SERVER_IP
+
+2. UFW Firewall Configuration
 
 ```bash
-sudo a2ensite example.com.conf
-sudo systemctl reload apache2
-```
-
----
-
-## Part 2 — Enabling HTTPS with Let's Encrypt (certbot)
-
-1. Install certbot and the Apache plugin:
-
-```bash
-sudo apt install -y certbot python3-certbot-apache
-```
-
-2. Request and install certificate for your domain (ensure DNS A record points to the server):
-
-```bash
-sudo certbot --apache -d example.com -d www.example.com
-```
-
-3. Verify certificate renewal is configured (cron/systemd timer). Test with:
-
-```bash
-sudo certbot renew --dry-run
-```
-
----
-
-## Part 3 — SSL/TLS Hardening
-
-1. Configure strong TLS in Apache config (ssl.conf or site config). Recommended settings include:
-
-- Disable TLS 1.0 and 1.1; enable TLS 1.2 and 1.3 only.
-- Use a modern cipher suite (prioritize AEAD ciphers like ECDHE_AESGCM, CHACHA20_POLY1305).
-- Enable HSTS (with care) and forward secrecy.
-
-Example snippet:
-
-```apache
-SSLProtocol -all +TLSv1.2 +TLSv1.3
-SSLCipherSuite HIGH:!aNULL:!MD5:!3DES
-SSLHonorCipherOrder On
-Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
-```
-
-2. Test the server with external scanners (Mozilla SSL Configuration Generator as reference) and tools like sslscan or Qualys SSL Labs.
-
-```bash
-openssl s_client -connect example.com:443 -servername example.com
-```
-
----
-
-## Part 4 — Firewall Configuration
-
-1. Using UFW (example):
-
-```bash
-sudo apt install ufw
-sudo ufw default deny incoming
-sudo ufw default allow outgoing
-sudo ufw allow 22/tcp   # SSH (restrict by IP if possible)
-sudo ufw allow 80/tcp   # HTTP (for ACME challenges if needed)
-sudo ufw allow 443/tcp  # HTTPS
 sudo ufw enable
-sudo ufw status verbose
+sudo ufw allow 80
+sudo ufw allow 443
+sudo ufw allow 3306
+sudo ufw status numbered
 ```
 
-2. If using cloud provider security groups, ensure equivalent rules exist at the network level.
-
----
-
-## Part 5 — Apache and System Hardening
-
-Key hardening steps applied:
-
-- Disable unnecessary Apache modules (e.g., autoindex if not used):
+To deny HTTP:
 
 ```bash
-sudo a2dismod status autoindex
-sudo systemctl reload apache2
+sudo ufw deny 80/tcp
 ```
 
-- Restrict directory permissions for DocumentRoot and configuration files.
-- Run Apache as a dedicated non-root user (default behaviour) and verify file ownership.
-- Limit information exposure by disabling server tokens and signatures in Apache:
+3. Generate SSL Certificate (OpenSSL)
 
-```apache
+Generate RSA key pair
+
+```bash
+openssl genrsa -out pair.key
+```
+
+Create CSR
+
+```bash
+sudo openssl req -new -key pair.key -out request.csr
+```
+
+Self-sign certificate
+
+```bash
+sudo openssl x509 -req -days 365 -in request.csr -signkey pair.key -out certificate.crt
+```
+
+Move certs into Apache directory:
+
+```bash
+sudo mkdir /etc/apache2/selfsignedcerts
+sudo cp pair.key /etc/apache2/selfsignedcerts/
+sudo cp certificate.crt /etc/apache2/selfsignedcerts/
+```
+
+4. Enable HTTPS in Apache
+
+Edit SSL config:
+
+```bash
+sudo nano /etc/apache2/sites-available/default-ssl.conf
+```
+
+Set:
+
+```
+SSLCertificateFile /etc/apache2/selfsignedcerts/certificate.crt
+SSLCertificateKeyFile /etc/apache2/selfsignedcerts/pair.key
+```
+
+Enable SSL:
+
+```bash
+sudo a2enmod ssl
+sudo a2ensite default-ssl.conf
+sudo systemctl restart apache2
+```
+
+Test HTTPS:
+
+```
+https://SERVER_IP
+```
+
+5. Apache Hardening
+
+Edit security configuration:
+
+```bash
+sudo nano /etc/apache2/conf-enabled/security.conf
+```
+
+Set:
+
+```
 ServerSignature Off
 ServerTokens Prod
+TraceEnable Off
 ```
 
-- Implement security headers (Content-Security-Policy, X-Content-Type-Options, X-Frame-Options) where appropriate.
-- Keep system and packages up to date and review logs regularly (/var/log/apache2/).
-
----
-
-## Part 6 — Testing and Verification
-
-- Verify HTTP redirects to HTTPS and certificate details are correct in browser.
-- Use curl and openssl to inspect TLS handshake and certificate chain.
-- Run security scanners like open-source sslscan or sslyze and review results.
-- Confirm firewall rules are active and only required ports are open.
-
-Example test:
+Restart:
 
 ```bash
-curl -I https://example.com
-openssl s_client -connect example.com:443 -servername example.com
+sudo systemctl restart apache2
 ```
 
----
+6. Install ModSecurity (WAF)
 
-## Skills Demonstrated
+```bash
+sudo apt-get install libapache2-mod-security2 -y
+sudo systemctl restart apache2
+```
 
-- Apache installation and Virtual Host configuration
-- TLS/SSL setup using Let's Encrypt (certbot)
-- TLS/SSL hardening and cipher configuration
-- Host-based firewall setup and rule management
-- Apache and system hardening best practices
-- Server testing and verification techniques
+7. Install ModEvasive (Anti‑DDoS)
 
----
+```bash
+sudo apt-get install libapache2-mod-evasive -y
+sudo systemctl restart apache2
+```
 
-## Key Takeaways
+🔍 Security Validation (Nmap)
 
-Deploying a secure Apache web server involves multiple layers: correctly installing and configuring Apache, obtaining and maintaining valid TLS certificates, hardening TLS parameters, restricting network exposure with a firewall, and applying system-level hardening. Regular testing and timely updates are essential to maintain security.
+Before Hardening
 
+Apache version & OS details were visible:
 
-![Apache Hardening Example](1.jpg)
+```
+Apache/2.x.x (Ubuntu)
+Open ports: 80, 443
+```
+
+After Hardening
+
+Fingerprinting reduced:
+
+```
+Apache version hidden
+Server tokens minimized
+TRACE disabled
+```
+
+This confirms the hardening was effective.
+
+📘 Lessons Learned
+
+- HTTPS is essential for secure communication
+- Self-signed certificates are useful for testing environments
+- UFW provides simple but effective firewall control
+- Apache exposes sensitive information by default
+- Hardening significantly reduces attack surface
+- ModSecurity adds WAF protection
+- ModEvasive helps mitigate DDoS attempts
+- Nmap is a powerful validation tool
+
+🔧 Future Improvements
+
+- Replace self-signed certificate with a CA-issued certificate
+- Deploy on a cloud VM (Azure or AWS)
+- Add automated configuration using Ansible
+- Implement fail2ban for SSH protection
+- Add logging and monitoring (Elastic Stack or Grafana)
+
+📄 Conclusion
+
+This project demonstrates practical experience in deploying and securing a Linux-based web server.
+It highlights core skills required for cloud, IT support, and cybersecurity roles, including:
+
+- Linux administration
+- Web server configuration
+- PKI & SSL/TLS
+- Firewall management
+- Security hardening
+- Vulnerability scanning
