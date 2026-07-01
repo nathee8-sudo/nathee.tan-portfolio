@@ -134,17 +134,23 @@ Generate RSA key pair
 openssl genrsa -out pair.key
 ```
 
+![OpenSSL genrsa output](11.jpg)
+
 Create CSR
 
 ```bash
 sudo openssl req -new -key pair.key -out request.csr
 ```
 
+![OpenSSL CSR prompt/output](12.jpg)
+
 Self-sign certificate
 
 ```bash
 sudo openssl x509 -req -days 365 -in request.csr -signkey pair.key -out certificate.crt
 ```
+
+![OpenSSL self-sign output](13.jpg)
 
 Move certs into Apache directory:
 
