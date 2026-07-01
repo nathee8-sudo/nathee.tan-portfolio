@@ -86,11 +86,15 @@ sudo systemctl status apache2
 
 ![Apache Installation Output](1.jpg)
 
-Test HTTP access:
+Test HTTP access (browser view):
+
+Access the default Apache welcome page in a browser or with curl using:
 
 http://localhost
 
 http://SERVER_IP
+
+![HTTP Access - Default Apache Page](2.jpg)
 
 2. UFW Firewall Configuration
 
