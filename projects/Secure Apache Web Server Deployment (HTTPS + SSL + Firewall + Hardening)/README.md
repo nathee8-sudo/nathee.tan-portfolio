@@ -248,13 +248,13 @@ sudo systemctl restart apache2
 
 🔍 Security Validation (Nmap)
 
-Before Hardening
+Nmap scan — before hardening:
 
-Apache version & OS details were visible:
+![Nmap scan — before hardening](../../25.jpg)
 
-![ModEvasive install/output - 25](../../25.jpg)
+Nmap scan — after hardening:
 
-![ModEvasive config/output - 26](../../26.jpg)
+![Nmap scan — after hardening](../../26.jpg)
 
 ```
 {
