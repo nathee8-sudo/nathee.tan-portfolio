@@ -84,7 +84,7 @@ sudo apt-get install apache2
 sudo systemctl status apache2
 ```
 
-![Apache Installation Output](../Secure%20Apache%20Web%20Server%20Deployment%20(HTTPS%20%2B%20SSL%20%2B%20Firewall%20%2B%20Hardening)/1.jpg)
+![Apache Installation Output](../1.jpg)
 
 Test HTTP access (browser view):
 
@@ -94,7 +94,7 @@ http://localhost
 
 http://SERVER_IP
 
-![HTTP Access - Default Apache Page](../Secure%20Apache%20Web%20Server%20Deployment%20(HTTPS%20%2B%20SSL%20%2B%20Firewall%20%2B%20Hardening)/2.jpg)
+![HTTP Access - Default Apache Page](../2.jpg)
 
 2. UFW Firewall Configuration
 
@@ -106,17 +106,17 @@ sudo ufw allow 3306
 sudo ufw status numbered
 ```
 
-![UFW Rules - 3](../Secure%20Apache%20Web%20Server%20Deployment%20(HTTPS%20%2B%20SSL%20%2B%20Firewall%20%2B%20Hardening)/3.jpg)
+![UFW Rules - 3](../3.jpg)
 
-![UFW Rules - 4](../Secure%20Apache%20Web%20Server%20Deployment%20(HTTPS%20%2B%20SSL%20%2B%20Firewall%20%2B%20Hardening)/4.jpg)
+![UFW Rules - 4](../4.jpg)
 
-![UFW Rules - 5](../Secure%20Apache%20Web%20Server%20Deployment%20(HTTPS%20%2B%20SSL%20%2B%20Firewall%20%2B%20Hardening)/5.jpg)
+![UFW Rules - 5](../5.jpg)
 
-![UFW Rules - 6](../Secure%20Apache%20Web%20Server%20Deployment%20(HTTPS%20%2B%20SSL%20%2B%20Firewall%20%2B%20Hardening)/6.jpg)
+![UFW Rules - 6](../6.jpg)
 
-![UFW Rules - 7](../Secure%20Apache%20Web%20Server%20Deployment%20(HTTPS%20%2B%20SSL%20%2B%20Firewall%20%2B%20Hardening)/7.jpg)
+![UFW Rules - 7](../7.jpg)
 
-![UFW Rules - 9](../Secure%20Apache%20Web%20Server%20Deployment%20(HTTPS%20%2B%20SSL%20%2B%20Firewall%20%2B%20Hardening)/9.jpg)
+![UFW Rules - 9](../9.jpg)
 
 To deny HTTP:
 
@@ -124,7 +124,7 @@ To deny HTTP:
 sudo ufw deny 80/tcp
 ```
 
-![UFW Deny HTTP - 10](../Secure%20Apache%20Web%20Server%20Deployment%20(HTTPS%20%2B%20SSL%20%2B%20Firewall%20%2B%20Hardening)/10.jpg)
+![UFW Deny HTTP - 10](../10.jpg)
 
 3. Generate SSL Certificate (OpenSSL)
 
@@ -134,7 +134,7 @@ Generate RSA key pair
 openssl genrsa -out pair.key
 ```
 
-![OpenSSL genrsa output](../Secure%20Apache%20Web%20Server%20Deployment%20(HTTPS%20%2B%20SSL%20%2B%20Firewall%20%2B%20Hardening)/11.jpg)
+![OpenSSL genrsa output](../11.jpg)
 
 Create CSR
 
@@ -142,7 +142,7 @@ Create CSR
 sudo openssl req -new -key pair.key -out request.csr
 ```
 
-![OpenSSL CSR prompt/output](../Secure%20Apache%20Web%20Server%20Deployment%20(HTTPS%20%2B%20SSL%20%2B%20Firewall%20%2B%20Hardening)/12.jpg)
+![OpenSSL CSR prompt/output](../12.jpg)
 
 Self-sign certificate
 
@@ -150,7 +150,7 @@ Self-sign certificate
 sudo openssl x509 -req -days 365 -in request.csr -signkey pair.key -out certificate.crt
 ```
 
-![OpenSSL self-sign output](../Secure%20Apache%20Web%20Server%20Deployment%20(HTTPS%20%2B%20SSL%20%2B%20Firewall%20%2B%20Hardening)/13.jpg)
+![OpenSSL self-sign output](../13.jpg)
 
 Move certs into Apache directory:
 
@@ -160,11 +160,11 @@ sudo cp pair.key /etc/apache2/selfsignedcerts/
 sudo cp certificate.crt /etc/apache2/selfsignedcerts/
 ```
 
-![Certs folder creation - 14](../Secure%20Apache%20Web%20Server%20Deployment%20(HTTPS%20%2B%20SSL%20%2B%20Firewall%20%2B%20Hardening)/14.jpg)
+![Certs folder creation - 14](../14.jpg)
 
-![Copy private key - 15](../Secure%20Apache%20Web%20Server%20Deployment%20(HTTPS%20%2B%20SSL%20%2B%20Firewall%20%2B%20Hardening)/15.jpg)
+![Copy private key - 15](../15.jpg)
 
-![Copy certificate - 16](../Secure%20Apache%20Web%20Server%20Deployment%20(HTTPS%20%2B%20SSL%20%2B%20Firewall%20%2B%20Hardening)/16.jpg)
+![Copy certificate - 16](../16.jpg)
 
 4. Enable HTTPS in Apache
 
@@ -174,7 +174,7 @@ Edit SSL config:
 sudo nano /etc/apache2/sites-available/default-ssl.conf
 ```
 
-![Edit SSL config - 17](../Secure%20Apache%20Web%20Server%20Deployment%20(HTTPS%20%2B%20SSL%20%2B%20Firewall%20%2B%20Hardening)/17.jpg)
+![Edit SSL config - 17](../17.jpg)
 
 Set:
 
@@ -183,7 +183,7 @@ SSLCertificateFile /etc/apache2/selfsignedcerts/certificate.crt
 SSLCertificateKeyFile /etc/apache2/selfsignedcerts/pair.key
 ```
 
-![SSL certificate paths - 18](../Secure%20Apache%20Web%20Server%20Deployment%20(HTTPS%20%2B%20SSL%20%2B%20Firewall%20%2B%20Hardening)/18.jpg)
+![SSL certificate paths - 18](../18.jpg)
 
 Enable SSL:
 
@@ -193,16 +193,16 @@ sudo a2ensite default-ssl.conf
 sudo systemctl restart apache2
 ```
 
-![Enable SSL - 19](../Secure%20Apache%20Web%20Server%20Deployment%20(HTTPS%20%2B%20SSL%20%2B%20Firewall%20%2B%20Hardening)/19.jpg)
+![Enable SSL - 19](../19.jpg)
 
-![Restart Apache - 20](../Secure%20Apache%20Web%20Server%20Deployment%20(HTTPS%20%2B%20SSL%20%2B%20Firewall%20%2B%20Hardening)/20.jpg)
+![Restart Apache - 20](../20.jpg)
 
 Test HTTPS:
 
 ```
 https://SERVER_IP
 ```
-![HTTPS Test](../Secure%20Apache%20Web%20Server%20Deployment%20(HTTPS%20%2B%20SSL%20%2B%20Firewall%20%2B%20Hardening)/21.jpg)
+![HTTPS Test](../21.jpg)
 
 5. Apache Hardening
 
@@ -220,9 +220,9 @@ ServerTokens Prod
 TraceEnable Off
 ```
 
-![Security config - ServerSignature/ServerTokens/TraceEnable](../../22.jpg)
+![Security config - ServerSignature/ServerTokens/TraceEnable](../22.jpg)
 
-![Security validation - Trace disabled / headers](../../23.jpg)
+![Security validation - Trace disabled / headers](../23.jpg)
 
 Restart:
 
@@ -237,7 +237,7 @@ sudo apt-get install libapache2-mod-security2 -y
 sudo systemctl restart apache2
 ```
 
-![ModSecurity install/output](../../24.jpg)
+![ModSecurity install/output](../24.jpg)
 
 7. Install ModEvasive (Anti‑DDoS)
 
@@ -246,7 +246,7 @@ sudo apt-get install libapache2-mod-evasive -y
 sudo systemctl restart apache2
 ```
 
-![Postfix configuration during ModEvasive install](../../27.jpg)
+![Postfix configuration during ModEvasive install](../27.jpg)
 
 Postfix configuration screen displayed during the installation of libapache2-mod-evasive. The Internet Site option was selected as recommended to complete the installation and support email-based[...]
 
@@ -254,11 +254,11 @@ Postfix configuration screen displayed during the installation of libapache2-mod
 
 Nmap scan — before hardening:
 
-![Nmap scan — before hardening](../../25.jpg)
+![Nmap scan — before hardening](../25.jpg)
 
 Nmap scan — after hardening:
 
-![Nmap scan — after hardening](../../26.jpg)
+![Nmap scan — after hardening](../26.jpg)
 
 ```
 {
