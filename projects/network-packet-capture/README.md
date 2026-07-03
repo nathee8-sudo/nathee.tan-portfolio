@@ -172,4 +172,4 @@ Wireshark provided detailed packet information including source and destination 
 
 This project provided practical experience configuring virtual machine networking, capturing live traffic and analysing network packets using industry-standard tools. Working with both **tcpdump*[...]
 
-The ability to capture and analyze network traffic is fundamental to network security, incident response, and troubleshooting—critical skills for any cybersecurity professional.
+The ability to capture and analyse network traffic is fundamental to network security, incident response, and troubleshooting—critical skills for any cybersecurity professional.
