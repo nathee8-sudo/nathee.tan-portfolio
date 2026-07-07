@@ -52,6 +52,8 @@ Host discovery was performed using Nmap’s default scanning behavior, which ide
 nmap <target>
 ```
 
+![Nmap Host Discovery output](./Picture1.jpg)
+
 #### Screenshots
 
 - Nmap output showing “Host is up”
