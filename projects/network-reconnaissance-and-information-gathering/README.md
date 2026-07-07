@@ -54,12 +54,6 @@ nmap <target>
 
 ![Nmap Host Discovery output](./Picture1.jpg)
 
-#### Screenshots
-
-- Nmap output showing “Host is up”
-- List of discovered hosts
-- MAC address and vendor information
-
 ---
 
 ## Part 2 – DNS Enumeration
