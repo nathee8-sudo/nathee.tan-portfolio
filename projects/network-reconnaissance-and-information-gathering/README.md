@@ -44,7 +44,10 @@ Performed DNS record analysis to understand domain infrastructure and mail routi
 
 ### Screenshots
 - dig ANY (Picture2.jpg)  
+![dig ANY output](./Picture2.jpg)
+
 - dig MX (Picture3.jpg)  
+![dig MX output](./Picture3.jpg)
 
 ---
 
