@@ -4,14 +4,6 @@
 This project demonstrates reconnaissance techniques performed in my IoD cybersecurity labs.  
 The goal was to identify active hosts, enumerate services, investigate DNS records, and gather information about a target system using open‑source tools.
 
-All screenshots and outputs in this project come directly from:
-
-- Lab 5.1 – Reconnaissance & Information Gathering  
-- Lab 5.2 – Gaining Access (Recon only)  
-- Lab 5.3 – DVWA & Pen Testing (Recon only)
-
-These labs form the foundation of the reconnaissance workflow.
-
 ---
 
 ## Objectives
