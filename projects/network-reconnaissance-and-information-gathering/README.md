@@ -1,104 +1,179 @@
-# Reconnaissance & Information Gathering
+# Network Reconnaissance & Information Gathering
 
-This project demonstrates practical reconnaissance techniques used to gather information about systems, domains, and networks.  
-The focus is on **OSINT**, **DNS analysis**, **WHOIS investigation**, and **network scanning** — core skills for IT Support, SOC, and Cybersecurity roles.
+## Overview
 
----
+This project demonstrates reconnaissance techniques performed in my IoD cybersecurity labs.  
+The goal was to identify active hosts, enumerate services, investigate DNS records, and gather information about a target system using open-source tools.
 
-## Google Hacking (OSINT)
+All screenshots and outputs in this project come directly from:
 
-Used advanced Google search operators to identify publicly exposed configuration files and database dumps.
+- Lab 5.1 – Reconnaissance & Information Gathering
+- Lab 5.2 – Gaining Access (Recon only)
+- Lab 5.3 – DVWA & Pen Testing (Recon only)
 
-### Key Findings
-- Exposed Kickstart configuration file containing:
-  - Plaintext root password (`ChangeMe`)
-  - Firewall and SSH configuration
-- Exposed MySQL dump containing:
-  - User IDs  
-  - Bidder IDs  
-  - Email addresses  
-  - Table creation statements  
-
-### Skills Demonstrated
-- OSINT methodology  
-- Identifying misconfigurations  
-- Recognising sensitive data exposure  
+These labs form the foundation of the reconnaissance workflow.
 
 ---
 
-## DNS Enumeration (dig)
+## Objectives
 
-Performed DNS record analysis to understand domain infrastructure and mail routing.
-
-### Key Findings
-- Enumerated A, MX, and AAAA records for target domains
-- Identified Google Workspace mail servers:
-  - `aspmx2.google.com` → **173.194.202.27**
-  - `aspmx3.googlemail.com` → **140.250.141.26**
-- Retrieved IPv6 records for target hosts
-
-### Skills Demonstrated
-- DNS troubleshooting  
-- Email server identification  
-- IPv4/IPv6 record analysis  
-
-### Screenshots
-- dig ANY (Picture2.jpg)  
-- dig MX (Picture3.jpg)  
+- Identify active hosts on the network
+- Enumerate open ports and running services
+- Investigate DNS records
+- Perform WHOIS lookups
+- Fingerprint operating systems
+- Document findings and provide recommendations
 
 ---
 
-## WHOIS Lookup
+## Lab Environment
 
-Investigated domain registration details to understand ownership and administrative contacts.
+### Operating Systems
 
-### Key Findings
-- Retrieved registrar, organisation, and contact information
-- Compared public vs. private domain registration and its impact on OSINT
+- Kali Linux
+- Metasploitable / DVWA target machines
 
-### Skills Demonstrated
-- WHOIS analysis  
-- OSINT profiling  
+### Tools Used
 
-### Screenshot
-![WHOIS output](./Picture4.jpg)
-
----
-
-## Network Scanning (Nmap)
-
-Conducted host discovery, port scanning, OS fingerprinting, and service enumeration on a target Linux VM.
-
-### Key Findings
-- Confirmed host availability and MAC vendor (VirtualBox)
-- Identified closed and filtered ports
-- Performed:
-  - OS detection  
-  - Version detection  
-  - Stealth SYN scan  
-  - FIN scan  
-  - No‑ping OS scan  
-
-### Skills Demonstrated
-- Network enumeration  
-- OS fingerprinting  
-- Service version detection  
-- Stealth scanning techniques  
-
-### Screenshots
-- Basic scan  
-- OS detection  
-- Version detection  
-- Stealth scans  
+- Nmap
+- WHOIS
+- dig
+- nslookup
 
 ---
 
-## Skills Summary
+## Part 1 – Host Discovery
 
-- OSINT (Google Dorking)
-- DNS analysis (dig)
+Host discovery was performed using Nmap’s default scanning behavior, which identifies live hosts before deeper enumeration.
+
+### Nmap Host Discovery
+
+```bash
+nmap <target>
+```
+
+![Nmap Host Discovery output](./Picture1.jpg)
+
+---
+
+## Part 2 – DNS Enumeration
+
+DNS investigation was performed using `dig`.
+
+### dig ANY
+
+```bash
+dig ANY <domain>
+```
+
+![dig ANY output](/projects/network-reconnaissance-and-information-gathering/Picture2.jpg)
+
+### dig MX
+
+```bash
+dig MX <domain>
+```
+
+![dig MX output](/projects/network-reconnaissance-and-information-gathering/Picture3.jpg)
+
+---
+
+## Part 3 – WHOIS Lookup
+
+WHOIS was used to gather domain registration details.
+
+### WHOIS Command
+
+```bash
+whois <domain>
+```
+
+#### Screenshots
+
+- WHOIS output showing registrar
+- DNS servers
+- Contact information
+
+---
+
+## Part 4 – Port Scanning & Service Enumeration
+
+Service enumeration was performed using Nmap version detection and full port scans.
+
+### Version Detection
+
+```bash
+nmap -sV <target>
+```
+
+### Full Port Scan
+
+```bash
+nmap -p- <target>
+```
+
+#### Screenshots
+
+- Open ports
+- Service versions (Apache, SSH, FTP, MySQL, etc.)
+- Version banners
+
+---
+
+## Part 5 – Operating System Detection
+
+OS fingerprinting was performed using Nmap’s OS detection capabilities.
+
+### OS Detection
+
+```bash
+nmap -O <target>
+```
+
+#### Screenshots
+
+- OS guess
+- TCP/IP fingerprinting results
+
+---
+
+## Security Findings
+
+Examples based on lab results:
+
+- Multiple open ports exposed
+- Outdated service versions
+- Web server information leakage
+- DNS records revealing internal details
+- WHOIS data exposing administrative contacts
+
+---
+
+## Recommendations
+
+- Close unused ports
+- Restrict SSH access
+- Update outdated services
+- Implement firewall rules
+- Limit DNS exposure
+- Enforce network segmentation
+
+---
+
+## Skills Demonstrated
+
+- Network scanning
+- Host discovery
+- DNS enumeration
 - WHOIS investigation
-- Network scanning (Nmap)
-- Identifying exposed credentials and misconfigurations
-- Understanding domain and email infrastructure
-- Interpreting scan results and network behaviour
+- Service identification
+- OS fingerprinting
+- Security analysis
+- Documentation and reporting
+
+---
+
+## Key Takeaways
+
+This project provided hands-on experience performing reconnaissance and analyzing network exposure.  
+Understanding how attackers gather information helps strengthen defensive strategies and improve network security posture.
