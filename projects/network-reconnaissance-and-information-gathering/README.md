@@ -88,11 +88,7 @@ WHOIS was used to gather domain registration details.
 whois <domain>
 ```
 
-#### Screenshots
-
-- WHOIS output showing registrar
-- DNS servers
-- Contact information
+![WHOIS output](./Picture4.jpg)
 
 ---
 
