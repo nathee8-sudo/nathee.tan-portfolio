@@ -96,10 +96,17 @@ Conducted host discovery, port scanning, OS fingerprinting, and service enumerat
 - Stealth scanning techniques  
 
 ### Screenshots
-- Basic scan  
-- OS detection  
-- Version detection  
-- Stealth scans  
+**Basic Scan:**  
+![Basic Scan](./Picture1.jpg)
+
+**OS Detection:**  
+![OS Detection](./Picture8.jpg)
+
+**Version Detection:**  
+![Version Detection](./Picture9.jpg)
+
+**Stealth Scans:**  
+![Stealth Scans](./Picture10.jpg)
 
 ---
 
