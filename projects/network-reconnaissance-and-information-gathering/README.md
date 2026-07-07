@@ -58,7 +58,7 @@ nmap <target>
 
 ## Part 2 – DNS Enumeration
 
-DNS investigation was performed using `dig` and `nslookup`.
+DNS investigation was performed using `dig`.
 
 ### dig ANY
 
@@ -66,23 +66,15 @@ DNS investigation was performed using `dig` and `nslookup`.
 dig ANY <domain>
 ```
 
+![dig ANY output](./Picture2.jpg)
+
 ### dig MX
 
 ```bash
 dig MX <domain>
 ```
 
-### nslookup
-
-```bash
-nslookup <domain>
-```
-
-#### Screenshots
-
-- `dig ANY` output
-- MX records
-- `nslookup` results
+![dig MX output](./Picture3.jpg)
 
 ---
 
