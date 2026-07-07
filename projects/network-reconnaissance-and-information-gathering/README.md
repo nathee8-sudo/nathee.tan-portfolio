@@ -1,125 +1,163 @@
-<h1>Network Reconnaissance & Information Gathering</h1>
+Network Reconnaissance & Information Gathering
+Overview
+This project demonstrates reconnaissance techniques performed in my IoD cybersecurity labs.
+The goal was to identify active hosts, enumerate services, investigate DNS records, and gather information about a target system using open‑source tools.
 
-<h2>Overview</h2>
-<p>
-This project demonstrates the use of reconnaissance techniques to identify active hosts, enumerate services, investigate DNS records, and fingerprint operating systems within a target network. 
-The work is based on IoD Labs 5.1, 5.2, and 5.3, and showcases practical skills used in cybersecurity and IT support roles.
-</p>
+All screenshots and outputs in this project come directly from:
 
-<hr>
+Lab 5.1 – Reconnaissance & Information Gathering
 
-<h2>Objectives</h2>
-<ul>
-  <li>Discover active hosts on a network.</li>
-  <li>Enumerate open ports and running services.</li>
-  <li>Identify DNS records using dig and nslookup.</li>
-  <li>Perform WHOIS lookups.</li>
-  <li>Detect operating systems using Nmap fingerprinting.</li>
-  <li>Document findings and provide security recommendations.</li>
-</ul>
+Lab 5.2 – Gaining Access (Recon only)
 
-<hr>
+Lab 5.3 – DVWA & Pen Testing (Recon only)
 
-<h2>Lab Environment</h2>
+These labs form the foundation of the reconnaissance workflow.
 
-<h3>Operating Systems</h3>
-<ul>
-  <li>Kali Linux</li>
-  <li>Metasploitable / DVWA target machines</li>
-</ul>
+Objectives
+Identify active hosts on the network
 
-<h3>Tools Used</h3>
-<ul>
-  <li>Nmap</li>
-  <li>WHOIS</li>
-  <li>dig</li>
-  <li>nslookup</li>
-</ul>
+Enumerate open ports and running services
 
-<hr>
+Investigate DNS records
 
-<h2>Part 1 – Host Discovery</h2>
-<p>
-Host discovery was performed using Nmap ping sweeps and ARP scans to identify active machines on the network.
-</p>
+Perform WHOIS lookups
 
-<h3>Nmap Ping Sweep</h3>
-<pre><code>nmap -sn 192.168.56.0/24</code></pre>
+Fingerprint operating systems
 
-<img src="host-discovery.jpg" alt="Host Discovery">
+Document findings and provide recommendations
 
-<hr>
+Lab Environment
+Operating Systems
+Kali Linux
 
-<h2>Part 2 – DNS Enumeration</h2>
-<p>
-DNS records were enumerated using dig and nslookup to identify domain information such as A, MX, NS, and TXT records.
-</p>
+Metasploitable / DVWA target machines
 
-<h3>dig ANY</h3>
-<pre><code>dig ANY example.com</code></pre>
-<img src="dns-any.jpg" alt="DNS ANY Lookup">
+Tools Used
+Nmap
 
-<h3>dig NS</h3>
-<pre><code>dig NS example.com</code></pre>
-<img src="dns-ns.jpg" alt="DNS NS Lookup">
+WHOIS
 
-<h3>nslookup</h3>
-<pre><code>nslookup example.com</code></pre>
-<img src="nslookup.jpg" alt="nslookup Output">
+dig
 
-<hr>
+nslookup
 
-<h2>Part 3 – WHOIS Lookup</h2>
-<p>
-WHOIS was used to gather domain registration details, including registrar, contact information, and DNS servers.
-</p>
+Part 1 – Host Discovery
+Host discovery was performed using Nmap’s default scanning behaviour, which identifies live hosts before performing deeper enumeration.
 
-<pre><code>whois example.com</code></pre>
-<img src="whois.jpg" alt="WHOIS Output">
+Nmap Host Discovery
+The lab used Nmap’s standard scan, which automatically performs host discovery:
 
-<hr>
+bash
+nmap <target>
+Screenshots
+Nmap output showing “Host is up”
 
-<h2>Part 4 – Port Scanning & Service Enumeration</h2>
-<p>
-Nmap was used to enumerate open ports and identify running services on the target machine.
-</p>
+List of discovered hosts
 
-<h3>Version Detection</h3>
-<pre><code>nmap -sV 192.168.56.101</code></pre>
-<img src="service-enumeration.jpg" alt="Service Enumeration">
+MAC address and vendor information
 
-<h3>Full Port Scan</h3>
-<pre><code>nmap -p- 192.168.56.101</code></pre>
-<img src="full-port-scan.jpg" alt="Full Port Scan">
+Part 2 – DNS Enumeration
+DNS investigation was performed using dig and nslookup.
 
-<hr>
+dig ANY
+bash
+dig ANY <domain>
+dig MX
+bash
+dig MX <domain>
+nslookup
+bash
+nslookup <domain>
+Screenshots
+dig ANY output
 
-<h2>Part 5 – Operating System Detection</h2>
-<p>
-Nmap OS fingerprinting was used to identify the operating system based on TCP/IP characteristics.
-</p>
+MX records
 
-<pre><code>nmap -O 192.168.56.101</code></pre>
-<img src="os-detection.jpg" alt="OS Detection">
+nslookup results
 
-<hr>
+Part 3 – WHOIS Lookup
+WHOIS was used to gather domain registration details.
 
-<h2>Skills Demonstrated</h2>
-<ul>
-  <li>Network scanning</li>
-  <li>Host discovery</li>
-  <li>DNS enumeration</li>
-  <li>WHOIS analysis</li>
-  <li>Service identification</li>
-  <li>OS fingerprinting</li>
-  <li>Security interpretation</li>
-  <li>Documentation and reporting</li>
-</ul>
+WHOIS Command
+bash
+whois <domain>
+Screenshots
+WHOIS output showing registrar
 
-<hr>
+DNS servers
 
-<h2>Key Takeaways</h2>
-<p>
-This project provided hands-on experience performing reconnaissance and analysing network exposure. 
+Contact information
+
+Part 4 – Port Scanning & Service Enumeration
+Service enumeration was performed using Nmap version detection and full port scans.
+
+Version Detection
+bash
+nmap -sV <target>
+Full Port Scan
+bash
+nmap -p- <target>
+Screenshots
+Open ports
+
+Service versions (Apache, SSH, FTP, MySQL, etc.)
+
+Version banners
+
+Part 5 – Operating System Detection
+OS fingerprinting was performed using Nmap’s OS detection capabilities.
+
+OS Detection
+bash
+nmap -O <target>
+Screenshots
+OS guess
+
+TCP/IP fingerprinting results
+
+Security Findings
+Examples based on lab results:
+
+Multiple open ports exposed
+
+Outdated service versions
+
+Web server information leakage
+
+DNS records revealing internal details
+
+WHOIS data exposing administrative contacts
+
+Recommendations
+Close unused ports
+
+Restrict SSH access
+
+Update outdated services
+
+Implement firewall rules
+
+Limit DNS exposure
+
+Enforce network segmentation
+
+Skills Demonstrated
+Network scanning
+
+Host discovery
+
+DNS enumeration
+
+WHOIS investigation
+
+Service identification
+
+OS fingerprinting
+
+Security analysis
+
+Documentation and reporting
+
+Key Takeaways
+This project provided hands‑on experience performing reconnaissance and analysing network exposure.
 Understanding how attackers gather information helps strengthen defensive strategies and improve network security posture.
-</p>
