@@ -1,169 +1,200 @@
-Network Reconnaissance & Information Gathering
-A practical demonstration of host discovery, DNS enumeration, service identification, and OS fingerprinting using industry‑standard tools.
-
-📌 Overview
-This project showcases my ability to perform network reconnaissance using open‑source tools such as Nmap, WHOIS, dig, and DNS enumeration techniques.
-It is based directly on my IoD labs and demonstrates real‑world skills used in cybersecurity, IT support, and system administration.
-
-The goal is to simulate a small network assessment and identify active hosts, exposed services, and potential risks — similar to what a junior analyst or technician would perform during troubleshooting or security review.
-
-🎯 Objectives
-Discover active hosts on a network
-
-Enumerate open ports and running services
-
-Identify DNS records
-
-Perform WHOIS lookups
-
-Detect operating systems
-
-Interpret results and provide security recommendations
-
-🧪 Lab Environment
-Kali Linux
-
-Nmap
-
-dig
-
-WHOIS
-
-Local virtual network
-
-Screenshots taken directly from IoD labs (3.1, 5.1, 5.2, 5.3)
-
-🔍 Reconnaissance Steps
-1. Host Discovery
-Techniques demonstrated:
-
-nmap -sn
-
-ARP ping scans
-
-ICMP echo scans
-
-📸 Screenshot to include:  
-Your Nmap host discovery output from Lab 5.1.
-
-2. Port Scanning
-Techniques demonstrated:
-
-SYN scan
-
-Version detection
-
-Service enumeration
-
-Commands used:
-
-Code
-nmap -sS -sV <target>
-📸 Screenshot to include:  
-Your Nmap port scan results showing open ports (Lab 5.2 / 5.3).
-
-3. Service Enumeration
-Identifying:
-
-HTTP
-
-SSH
-
-FTP
-
-MySQL
-
-Apache
-
-Other services discovered during scans
-
-📸 Screenshot to include:  
-Service version detection output.
-
-4. DNS Investigation
-Using:
-
-Code
-dig A <domain>
-dig MX <domain>
-dig NS <domain>
-📸 Screenshot to include:  
-Your DNS record lookup from Lab 5.1.
-
-5. WHOIS Analysis
-Using:
-
-Code
-whois <domain>
-📸 Screenshot to include:  
-WHOIS output showing registrar + contact info.
-
-6. OS Fingerprinting
-Using:
-
-Code
-nmap -O <target>
-📸 Screenshot to include:  
-Your OS detection results.
-
-⚠️ Security Findings
-Examples (replace with your actual results):
-
-Unnecessary open ports
-
-Services running outdated versions
-
-Missing firewall rules
-
-Publicly exposed DNS records
-
-Weak server fingerprinting protections
-
-🛡️ Recommendations
-Close unused ports
-
-Restrict SSH access
-
-Update vulnerable services
-
-Implement firewall rules
-
-Hide unnecessary DNS records
-
-Enforce network segmentation
-
-📚 Skills Demonstrated
-Network scanning
-
-Host discovery
-
-DNS enumeration
-
-WHOIS analysis
-
-OS fingerprinting
-
-Service identification
-
-Security interpretation
-
-Documentation & reporting
-
-📝 Lessons Learned
-Reconnaissance reveals more than people expect
-
-DNS records often leak sensitive information
-
-Even small networks expose multiple attack surfaces
-
-Proper documentation is essential for real‑world security work
-
-✔️ Project Status
-Completed using IoD Labs:
-
-Lab 3.1 – Capturing Traffic
-
-Lab 5.1 – Reconnaissance & Information Gathering
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Network Reconnaissance & Information Gathering</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 40px; line-height: 1.6; }
+    h1, h2, h3 { color: #2c3e50; }
+    hr { margin: 24px 0; }
+    code { background: #f4f4f4; padding: 2px 4px; border-radius: 3px; }
+    pre { background: #f4f4f4; padding: 10px; border-radius: 4px; overflow-x: auto; }
+    ul { margin-left: 20px; }
+  </style>
+</head>
+<body>
+
+  <h1>Network Reconnaissance &amp; Information Gathering</h1>
+  <p><em>A practical demonstration of host discovery, DNS enumeration, service identification, and OS fingerprinting using industry‑standard tools.</em></p>
+
+  <hr>
+
+  <h2>Overview</h2>
+  <p>
+    This project demonstrates my ability to perform <strong>network reconnaissance</strong> using open‑source tools such as
+    <strong>Nmap</strong>, <strong>WHOIS</strong>, <strong>dig</strong>, and DNS enumeration techniques. It is based directly on my IoD
+    cybersecurity labs and showcases real‑world skills used in IT support, cybersecurity, and system administration.
+  </p>
+  <p>
+    The goal is to simulate a small network assessment and identify active hosts, exposed services, and potential risks — similar to what a
+    junior analyst or technician would perform during troubleshooting or security review.
+  </p>
+
+  <hr>
+
+  <h2>Objectives</h2>
+  <ul>
+    <li>Discover active hosts on a network</li>
+    <li>Enumerate open ports and running services</li>
+    <li>Identify DNS records</li>
+    <li>Perform WHOIS lookups</li>
+    <li>Detect operating systems</li>
+    <li>Interpret results and provide security recommendations</li>
+  </ul>
+
+  <hr>
+
+  <h2>Lab Environment</h2>
+  <ul>
+    <li><strong>Kali Linux</strong></li>
+    <li><strong>Nmap</strong></li>
+    <li><strong>dig</strong></li>
+    <li><strong>WHOIS</strong></li>
+    <li><strong>Local VirtualBox network</strong></li>
+    <li>Screenshots taken from:
+      <ul>
+        <li>Lab 5.1 – Reconnaissance &amp; Information Gathering</li>
+        <li>Lab 5.2 – Gaining Access (Recon only)</li>
+        <li>Lab 5.3 – DVWA &amp; Pen Testing (Recon only)</li>
+      </ul>
+    </li>
+  </ul>
+
+  <hr>
+
+  <h2>1. Host Discovery</h2>
+  <p>Commands used:</p>
+  <pre><code>nmap -sn &lt;target-range&gt;</code></pre>
+  <p><strong>Screenshots to include:</strong></p>
+  <ul>
+    <li>Nmap ping sweep</li>
+    <li>ARP discovery (if performed)</li>
+    <li>List of active hosts</li>
+  </ul>
+
+  <hr>
+
+  <h2>2. DNS Enumeration</h2>
+  <p>Commands used:</p>
+  <pre><code>dig ANY &lt;domain&gt;
+dig NS &lt;domain&gt;
+dig MX &lt;domain&gt;
+nslookup &lt;domain&gt;</code></pre>
+  <p><strong>Screenshots to include:</strong></p>
+  <ul>
+    <li>dig ANY output</li>
+    <li>NS/MX records</li>
+    <li>nslookup results</li>
+  </ul>
+
+  <hr>
+
+  <h2>3. WHOIS Lookup</h2>
+  <p>Command used:</p>
+  <pre><code>whois &lt;domain&gt;</code></pre>
+  <p><strong>Screenshots to include:</strong></p>
+  <ul>
+    <li>WHOIS output showing registrar, DNS servers, contact info</li>
+  </ul>
+
+  <hr>
+
+  <h2>4. Port Scanning &amp; Service Enumeration</h2>
+  <p>Commands used:</p>
+  <pre><code>nmap -sS &lt;target&gt;
+nmap -sV &lt;target&gt;
+nmap -p- &lt;target&gt;</code></pre>
+  <p><strong>Screenshots to include:</strong></p>
+  <ul>
+    <li>Open ports</li>
+    <li>Service versions</li>
+    <li>Apache/SSH/FTP/MySQL banners</li>
+  </ul>
+
+  <hr>
+
+  <h2>5. Operating System Detection</h2>
+  <p>Command used:</p>
+  <pre><code>nmap -O &lt;target&gt;</code></pre>
+  <p><strong>Screenshots to include:</strong></p>
+  <ul>
+    <li>OS fingerprinting results</li>
+    <li>TCP/IP signature guess</li>
+  </ul>
+
+  <hr>
+
+  <h2>Security Findings</h2>
+  <p>Examples (replace with your actual results):</p>
+  <ul>
+    <li>Unnecessary open ports</li>
+    <li>Outdated services</li>
+    <li>Exposed DNS records</li>
+    <li>Weak SSH configuration</li>
+    <li>Information leakage through WHOIS</li>
+  </ul>
+
+  <hr>
+
+  <h2>Recommendations</h2>
+  <ul>
+    <li>Close unused ports</li>
+    <li>Restrict SSH access</li>
+    <li>Patch outdated services</li>
+    <li>Implement firewall rules</li>
+    <li>Disable DNS zone transfers</li>
+    <li>Enforce network segmentation</li>
+  </ul>
+
+  <hr>
+
+  <h2>Skills Demonstrated</h2>
+  <ul>
+    <li>Network scanning</li>
+    <li>Host discovery</li>
+    <li>DNS enumeration</li>
+    <li>WHOIS analysis</li>
+    <li>OS fingerprinting</li>
+    <li>Service identification</li>
+    <li>Security interpretation</li>
+    <li>Documentation &amp; reporting</li>
+  </ul>
+
+  <hr>
+
+  <h2>Lessons Learned</h2>
+  <ul>
+    <li>Reconnaissance is the foundation of both offensive and defensive security</li>
+    <li>DNS and WHOIS often reveal more than expected</li>
+    <li>Small misconfigurations can expose critical information</li>
+    <li>Proper documentation is essential for real‑world security work</li>
+  </ul>
+
+  <hr>
+
+  <h2>Repository Structure</h2>
+  <pre><code>network-reconnaissance-and-information-gathering/
+│
+├── README.md
+└── screenshots/
+    ├── host-discovery.png
+    ├── dns-enumeration.png
+    ├── whois.png
+    ├── port-scan.png
+    ├── os-detection.png</code></pre>
+
+  <hr>
+
+  <h2>Project Status</h2>
+  <p>Completed using IoD Labs:</p>
+  <ul>
+    <li>Lab 5.1 – Reconnaissance &amp; Information Gathering</li>
+    <li>Lab 5.2 – Gaining Access (Recon only)</li>
+    <li>Lab 5.3 – DVWA &amp; Pen Testing (Recon only)</li>
+  </ul>
+
+</body>
+</html>
 
 Lab 5.2 – Gaining Access
 
