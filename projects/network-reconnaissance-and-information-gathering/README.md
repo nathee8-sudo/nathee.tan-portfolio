@@ -48,14 +48,12 @@ Performed DNS record analysis to understand domain infrastructure and mail routi
 dig ANY <domain>
 ```
 
-- dig ANY  
 ![dig ANY output](./Picture2.jpg)
 
 ```bash
 dig MX <domain>
 ```
 
-- dig MX  
 ![dig MX output](./Picture3.jpg)
 
 ---
