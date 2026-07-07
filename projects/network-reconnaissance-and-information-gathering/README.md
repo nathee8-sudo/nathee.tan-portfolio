@@ -43,10 +43,19 @@ Performed DNS record analysis to understand domain infrastructure and mail routi
 - IPv4/IPv6 record analysis  
 
 ### Screenshots
-- dig ANY (Picture2.jpg)  
+
+```bash
+dig ANY <domain>
+```
+
+- dig ANY  
 ![dig ANY output](./Picture2.jpg)
 
-- dig MX (Picture3.jpg)  
+```bash
+dig MX <domain>
+```
+
+- dig MX  
 ![dig MX output](./Picture3.jpg)
 
 ---
