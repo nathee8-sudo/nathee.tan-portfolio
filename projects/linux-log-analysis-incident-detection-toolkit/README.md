@@ -19,7 +19,7 @@ The project simulates how a junior SOC analyst or incident responder would:
 
 This project is built from three interconnected labs:
 
-### 1. Log Analysis (Lab 7.1)
+### 1. Log Analysis
 
 Analysed key Linux log files to identify authentication attempts, system events, firewall activity, and kernel warnings.
 
@@ -41,7 +41,7 @@ Analysed key Linux log files to identify authentication attempts, system events,
 - Kernel warnings
 - Apache access/error logs
 
-### 2. Digital Evidence Collection (Lab 7.2)
+### 2. Digital Evidence Collection
 
 Performed forensic acquisition of a USB device using industry-standard techniques.
 
@@ -62,7 +62,7 @@ Performed forensic acquisition of a USB device using industry-standard technique
 - `dcfldd` imaging + MD5/SHA hashes
 - Verification output
 
-### 3. Incident-Response Automation (Lab 7.3)
+### 3. Incident-Response Automation
 
 Developed shell scripts to automate detection tasks such as pattern matching and failed login extraction.
 
