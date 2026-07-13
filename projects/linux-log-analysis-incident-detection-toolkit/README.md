@@ -70,10 +70,10 @@ This is the resulting output from that search.
 
 ##### Viewing Authentication Logs
 `/var/log/auth.log`
+
 ![Auth Log View](./Picture7.png)
 
 ##### Evidence of Opened SSH Session
-Searching the auth log shows evidence that an SSH session was opened.
 ![SSH Session Evidence](./Picture9.png)
 
 
