@@ -42,15 +42,15 @@ sudo nano /var/log/syslog
 
 ![Syslog Search 1](./Picture1.png)
 
-The output below shows various system and service log entries returned from the syslog file.
+##### syslog file
 
 ![Syslog Search 3](./Picture3.png)
 
-UFW firewall logs are also present in syslog.
+##### UFW firewall logs in syslog.
 
 ![Syslog Search 2](./Picture2.png)
 
-To find blocked packets, search the logs using:
+##### Blocked packets
 
 ```bash
 ufw block
