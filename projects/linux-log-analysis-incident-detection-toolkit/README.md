@@ -65,9 +65,9 @@ This is the resulting output from that search.
 #### SSH Login Attempts
 
 ##### SSH Login Attempt (Kali → Ubuntu)
+Attempting to SSH into the Ubuntu machine from the Kali machine.
 ![SSH Login Attempt](./Picture8.png)
 
-Attempting to SSH into the Ubuntu machine from the Kali machine.
 
 ##### Viewing Authentication Logs
 ![Auth Log View](./Picture7.png)
@@ -75,9 +75,10 @@ Attempting to SSH into the Ubuntu machine from the Kali machine.
 Viewing the `/var/log/auth.log` file.
 
 ##### Evidence of Opened SSH Session
+Searching the auth log shows evidence that an SSH session was opened.
 ![SSH Session Evidence](./Picture9.png)
 
-Searching the auth log shows evidence that an SSH session was opened.
+
 
 - Kernel warnings
 - Apache access/error logs
