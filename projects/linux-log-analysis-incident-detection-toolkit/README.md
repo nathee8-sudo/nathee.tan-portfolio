@@ -57,9 +57,8 @@ This is the result.
 
 ![Syslog Search 5](./Picture5.png)
 
-- UFW firewall logs
-- SSH login attempts
-- Failed login entries
+### SSH login attempts
+
 - Kernel warnings
 - Apache access/error logs
 
