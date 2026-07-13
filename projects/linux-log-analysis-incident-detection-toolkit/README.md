@@ -32,7 +32,6 @@ Analysed key Linux log files to identify authentication attempts, system events,
 - Web server log inspection (`apache2/access.log`, `error.log`)
 - Using `grep` and filters to isolate suspicious activity
 
-**Screenshots included:**
 
 #### Syslog searches
 
