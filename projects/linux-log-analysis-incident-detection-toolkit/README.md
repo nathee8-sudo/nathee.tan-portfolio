@@ -34,7 +34,13 @@ Analysed key Linux log files to identify authentication attempts, system events,
 
 **Screenshots included:**
 
-- Syslog searches
+#### Syslog searches
+
+![Syslog Search 1](./Picture1.png)
+![Syslog Search 3](./Picture3.png)
+![Syslog Search 4](./Picture4.png)
+![Syslog Search 5](./Picture5.png)
+
 - UFW firewall logs
 - SSH login attempts
 - Failed login entries
