@@ -45,6 +45,10 @@ The output below shows the various logs returned as a result of running the comm
 
 ![Syslog Search 3](./Picture3.png)
 
+UFW logs contained in syslog
+
+![Syslog Search 2](./Picture2.png)
+
 To find blocked packets, we can search the logs by inputting `ufw block`.
 
 ![Syslog Search 4](./Picture4.png)
