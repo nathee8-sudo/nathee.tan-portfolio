@@ -32,43 +32,54 @@ Analysed key Linux log files to identify authentication attempts, system events,
 - Web server log inspection (`apache2/access.log`, `error.log`)
 - Using `grep` and filters to isolate suspicious activity
 
+#### Syslog Searches
 
-#### Syslog searches
+Run the following command to open and inspect the syslog file:
 
 ```bash
-sudo nano syslog
+sudo nano /var/log/syslog
 ```
 
+##### Syslog Search 1
 ![Syslog Search 1](./Picture1.png)
 
-The output below shows the various logs returned as a result of running the command.
+The output below shows various system and service log entries returned from the syslog file.
 
+##### Syslog Search 3
 ![Syslog Search 3](./Picture3.png)
 
-UFW logs contained in syslog
+UFW firewall logs are also present in syslog.
 
+##### Syslog Search 2
 ![Syslog Search 2](./Picture2.png)
 
-To find blocked packets, we can search the logs by inputting `ufw block`.
+To find blocked packets, search the logs using:
 
+```bash
+ufw block
+```
+
+##### Syslog Search 4
 ![Syslog Search 4](./Picture4.png)
 
-This is the result.
+This is the resulting output from that search.
 
+##### Syslog Search 5
 ![Syslog Search 5](./Picture5.png)
 
-### SSH login attempts
+#### SSH Login Attempts
 
+##### SSH Login Attempt (Kali → Ubuntu)
 ![SSH Login Attempt](./Picture8.png)
 
 Attempting to SSH into the Ubuntu machine from the Kali machine.
 
-#### Viewing Authentication Logs
+##### Viewing Authentication Logs
 ![Auth Log View](./Picture7.png)
 
 Viewing the `/var/log/auth.log` file.
 
-#### Evidence of Opened SSH Session
+##### Evidence of Opened SSH Session
 ![SSH Session Evidence](./Picture9.png)
 
 Searching the auth log shows evidence that an SSH session was opened.
