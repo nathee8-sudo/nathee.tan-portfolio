@@ -65,7 +65,6 @@ This is the resulting output from that search.
 #### SSH Login Attempts
 
 ##### SSH Login Attempt (Kali → Ubuntu)
-Attempting to SSH into the Ubuntu machine from the Kali machine.
 ![SSH Login Attempt](./Picture8.png)
 
 
