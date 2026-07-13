@@ -40,17 +40,14 @@ Run the following command to open and inspect the syslog file:
 sudo nano /var/log/syslog
 ```
 
-##### Syslog Search 1
 ![Syslog Search 1](./Picture1.png)
 
 The output below shows various system and service log entries returned from the syslog file.
 
-##### Syslog Search 3
 ![Syslog Search 3](./Picture3.png)
 
 UFW firewall logs are also present in syslog.
 
-##### Syslog Search 2
 ![Syslog Search 2](./Picture2.png)
 
 To find blocked packets, search the logs using:
@@ -59,12 +56,10 @@ To find blocked packets, search the logs using:
 ufw block
 ```
 
-##### Syslog Search 4
 ![Syslog Search 4](./Picture4.png)
 
 This is the resulting output from that search.
 
-##### Syslog Search 5
 ![Syslog Search 5](./Picture5.png)
 
 #### SSH Login Attempts
