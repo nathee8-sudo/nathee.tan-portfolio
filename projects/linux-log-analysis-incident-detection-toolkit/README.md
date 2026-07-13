@@ -59,17 +59,17 @@ This is the result.
 
 ### SSH login attempts
 
-![SSH Login Attempt](./Picture8.jpg)
+![SSH Login Attempt](./Picture8.png)
 
 Attempting to SSH into the Ubuntu machine from the Kali machine.
 
 #### Viewing Authentication Logs
-![Auth Log View](./Picture7.jpg)
+![Auth Log View](./Picture7.png)
 
 Viewing the `/var/log/auth.log` file.
 
 #### Evidence of Opened SSH Session
-![SSH Session Evidence](./Picture9.jpg)
+![SSH Session Evidence](./Picture9.png)
 
 Searching the auth log shows evidence that an SSH session was opened.
 
