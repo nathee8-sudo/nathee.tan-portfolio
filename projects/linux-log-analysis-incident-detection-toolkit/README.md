@@ -36,9 +36,22 @@ Analysed key Linux log files to identify authentication attempts, system events,
 
 #### Syslog searches
 
+```bash
+sudo nano syslog
+```
+
 ![Syslog Search 1](./Picture1.png)
+
+The output below shows the various logs returned as a result of running the command.
+
 ![Syslog Search 3](./Picture3.png)
+
+To find blocked packets, we can search the logs by inputting `ufw block`.
+
 ![Syslog Search 4](./Picture4.png)
+
+This is the result.
+
 ![Syslog Search 5](./Picture5.png)
 
 - UFW firewall logs
