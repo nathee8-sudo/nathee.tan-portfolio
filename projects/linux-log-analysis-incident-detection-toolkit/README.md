@@ -86,9 +86,6 @@ ufw block
 
 ![Apache Access/Error Log 3](./Picture14.png)
 
-- Kernel warnings
-- Apache access/error logs
-
 ### 2. Digital Evidence Collection
 
 Performed forensic acquisition of a USB device using industry-standard techniques.
