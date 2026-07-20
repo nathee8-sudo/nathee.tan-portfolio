@@ -79,6 +79,13 @@ ufw block
 
 ![Kernel Warning 2](./Picture11.png)
 
+##### Apache access/error logs
+![Apache Access/Error Log 1](./Picture12.png)
+
+![Apache Access/Error Log 2](./Picture13.png)
+
+![Apache Access/Error Log 3](./Picture14.png)
+
 - Kernel warnings
 - Apache access/error logs
 
