@@ -74,7 +74,10 @@ ufw block
 ##### Evidence of Opened SSH Session
 ![SSH Session Evidence](./Picture9.png)
 
+##### Kernel Warnings
+![Kernel Warning 1](./Picture10.png)
 
+![Kernel Warning 2](./Picture11.png)
 
 - Kernel warnings
 - Apache access/error logs
