@@ -3,8 +3,6 @@
 This project demonstrates the deployment, configuration, and hardening of an Apache web server on Ubuntu Linux.
 It includes HTTPS configuration using a self‑signed SSL certificate, firewall rules, and multiple security hardening techniques.
 
-This project is based on Lab 3.3 (Web Server & Firewall) and Lab 6.3 (PKI & Apache Hardening).
-
 📌 Overview
 
 The goal of this project is to deploy a functional Apache web server and secure it using HTTPS, firewall rules, and server hardening techniques.
