@@ -135,9 +135,18 @@ Developed shell scripts to automate detection tasks such as pattern matching and
 
 **Screenshots included:**
 
-- Script creation
-- Script execution
-- Output showing failed login attempts
+#### Script creation
+
+![Script creation](./Picture20.png)
+
+#### Script execution
+
+![Script execution](./Picture21.png)
+
+#### Output showing failed login attempts
+
+![Output showing failed login attempts](./Picture22.png)
+
 - Pattern-matching script output
 
 ## 🛡️ Why This Project Matters
