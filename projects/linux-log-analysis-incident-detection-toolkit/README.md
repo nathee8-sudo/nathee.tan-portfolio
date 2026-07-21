@@ -101,17 +101,25 @@ Performed forensic acquisition of a USB device using industry-standard technique
 
 **Screenshots included:**
 
-- USB detection
+#### USB detection
 
 ![USB detection](./Picture15.png)
 
-- Mounting directories
+#### Mounting directories
 
 ![Mounting directories](./Picture16.png)
 
-- `dd` imaging
-- `dcfldd` imaging + MD5/SHA hashes
-- Verification output
+#### `dd` imaging
+
+![dd imaging](./Picture17.png)
+
+#### `dcfldd` imaging + MD5/SHA hashes
+
+![dcfldd imaging + MD5/SHA hashes](./Picture18.png)
+
+#### Verification output
+
+![Verification output](./Picture19.png)
 
 ### 3. Incident-Response Automation
 
