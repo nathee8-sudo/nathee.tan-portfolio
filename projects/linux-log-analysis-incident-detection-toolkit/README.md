@@ -135,6 +135,10 @@ Developed shell scripts to automate detection tasks such as pattern matching and
 
 **Screenshots included:**
 
+#### Example of script creation containing loops
+
+#### Example of function creation
+
 #### Example of script creation using grep
 
 ![Script creation](./Picture20.png)
