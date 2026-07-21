@@ -135,7 +135,7 @@ Developed shell scripts to automate detection tasks such as pattern matching and
 
 **Screenshots included:**
 
-#### Script creation
+#### Example of script creation using grep
 
 ![Script creation](./Picture20.png)
 
@@ -143,11 +143,11 @@ Developed shell scripts to automate detection tasks such as pattern matching and
 
 ![Script execution](./Picture21.png)
 
-#### Output showing failed login attempts
+#### Script creation to output failed login attempts
 
 ![Output showing failed login attempts](./Picture22.png)
 
-#### Pattern-matching script output
+#### Output of script
 
 ![Pattern-matching script output](./Picture23.png)
 
