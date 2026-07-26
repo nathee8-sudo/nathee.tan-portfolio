@@ -1,5 +1,3 @@
-mkdir -p projects/asd-essential-8-security-controls
-cat > projects/asd-essential-8-security-controls/README.md <<'EOF'
 # ASD Essential 8 Security Controls – Implementation Project
 
 ## 1. Overview
