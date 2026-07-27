@@ -1,242 +1,61 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nathee - Cybersecurity Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-
-<body>
-
-    <!-- NAVBAR -->
-    <nav class="navbar">
-        <div class="container">
-            <div class="logo">Nathee</div>
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
-
-    <!-- HERO -->
-    <section class="hero">
-        <div class="container">
-            <h1>Cybersecurity Portfolio</h1>
-            <p>Hands-on security labs, network analysis, and system hardening projects</p>
-        </div>
-    </section>
-
-    <!-- ABOUT -->
-    <section id="about" class="about">
-        <div class="container">
-            <h2>About Me</h2>
-            <p>
-                I'm an aspiring cybersecurity and IT professional who enjoys learning by
-                building and solving real technical problems. I use home labs and hands-on
-                projects to develop practical skills in Linux administration, networking,
-                web server security, and packet analysis. This portfolio showcases the
-                projects I've built, the skills I've developed, and my approach to
-                documenting and validating technical work as I continue building my career
-                in IT and cybersecurity.
-            </p>
-            <p>
-                <strong>Seeking opportunities in IT support, cybersecurity, SOC analysis, or network security.</strong>
-            </p>
-        </div>
-    </section>
-
-    <!-- PROJECTS -->
-    <section id="projects" class="projects">
-        <div class="container">
-            <h2>Projects & Labs</h2>
-
-            <div class="projects-grid">
-
-                <!-- Packet Capture -->
-                <div class="project-card">
-                    <h3>Packet Capture and Network Traffic Analysis</h3>
-                    <p class="project-category">Network Analysis</p>
-                    <p>
-                        Configured a VirtualBox home lab with Linux and Windows systems to capture and analyze
-                        network traffic using industry-standard tools.
-                    </p>
-                    <div class="project-details">
-                        <p><strong>Tools:</strong> tcpdump, Wireshark, VirtualBox, Kali Linux, Windows 10, Ubuntu</p>
-                        <p><strong>Key Skills:</strong> Network configuration, packet filtering, ICMP, DNS, TCP, protocol analysis, troubleshooting</p>
-                        <p><strong>Outcome:</strong> Demonstrated practical packet capture techniques and developed proficiency analyzing live network traffic.</p>
-                    </div>
-                    <a href="projects/network-packet-capture/" class="pro
-You absolutely can ask me to do it — and thanks for pasting your file.
-
-Your snippet is cut off at the end (class="pro...), so here’s a clean full replacement index.html that keeps your style and makes projects render dynamically from /projects/projects.json so all projects display automatically.
-
-index.html
-v2
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nathee - Cybersecurity Portfolio</title>
-And create this file too:
-
-projects/projects.json
-v2
-[
-  {
-    "title": "Packet Capture and Network Traffic Analysis",
-    "category": "Network Analysis",
-    "description": "Configured a VirtualBox home lab with Linux and Windows systems to capture and analyze network traffic using industry-standard tools.",
-    "tools": ["tcpdump", "Wireshark", "VirtualBox", "Kali Linux", "Windows 10", "Ubuntu"],
-If you want, next message I can also give you a matching styles.css snippet so cards look polished immediately.
-
-index.html
-L1-L138
-all the projects arent displayed
-HTML
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nathee - Cybersecurity Portfolio</title>
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
-
-  <!-- NAVBAR -->
-  <nav class="navbar">
+<section id="projects" class="projects">
     <div class="container">
-      <div class="logo">Nathee</div>
-      <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </div>
-  </nav>
+        <h2>Projects & Labs</h2>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="container">
-      <h1>Cybersecurity Portfolio</h1>
-      <p>Hands-on security labs, network analysis, and system hardening projects</p>
-    </div>
-  </section>
+        <div class="projects-grid">
 
-  <!-- ABOUT -->
-  <section id="about" class="about">
-    <div class="container">
-      <h2>About Me</h2>
-      <p>
-        I'm an aspiring cybersecurity and IT professional who enjoys learning by
-        building and solving real technical problems. I use home labs and hands-on
-        projects to develop practical skills in Linux administration, networking,
-        web server security, and packet analysis. This portfolio showcases the
-        projects I've built, the skills I've developed, and my approach to
-        documenting and validating technical work as I continue building my career
-        in IT and cybersecurity.
-      </p>
-      <p>
-        <strong>Seeking opportunities in IT support, cybersecurity, SOC analysis, or network security.</strong>
-      </p>
-    </div>
-  </section>
-
-  <!-- PROJECTS -->
-  <section id="projects" class="projects">
-    <div class="container">
-      <h2>Projects & Labs</h2>
-      <div id="projects-grid" class="projects-grid">
-        <p>Loading projects...</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- SKILLS -->
-  <section id="skills" class="skills">
-    <div class="container">
-      <h2>Skills</h2>
-      <ul class="skills-list">
-        <li>Linux Administration</li>
-        <li>Network Traffic Analysis</li>
-        <li>Wireshark / tcpdump</li>
-        <li>Web Server Hardening</li>
-        <li>Bash Scripting</li>
-        <li>System Troubleshooting</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact" class="contact">
-    <div class="container">
-      <h2>Contact</h2>
-      <p>Email: <a href="mailto:your-email@example.com">your-email@example.com</a></p>
-      <p>GitHub: <a href="https://github.com/nathee8-sudo" target="_blank" rel="noopener noreferrer">nathee8-sudo</a></p>
-    </div>
-  </section>
-
-  <script>
-    async function loadProjects() {
-      const grid = document.getElementById("projects-grid");
-
-      try {
-        // Use root-relative path so it works no matter where index.html is served from
-        const response = await fetch("/projects/projects.json", { cache: "no-store" });
-        if (!response.ok) throw new Error(`Unable to load projects JSON: ${response.status}`);
-
-        const projects = await response.json();
-
-        if (!Array.isArray(projects) || projects.length === 0) {
-          grid.innerHTML = "<p>No projects found.</p>";
-          return;
-        }
-
-        grid.innerHTML = "";
-
-        projects.forEach((project) => {
-          const card = document.createElement("article");
-          card.className = "project-card";
-
-          const title = project.title || "Untitled Project";
-          const category = project.category || "Project";
-          const description = project.description || "";
-          const tools = Array.isArray(project.tools) ? project.tools.join(", ") : (project.tools || "");
-          const skills = Array.isArray(project.skills) ? project.skills.join(", ") : (project.skills || "");
-          const outcome = project.outcome || "";
-          const link = project.link || "#";
-          const linkText = project.linkText || "View Project";
-
-          card.innerHTML = `
-            <h3>${title}</h3>
-            <p class="project-category">${category}</p>
-            <p>${description}</p>
-            <div class="project-details">
-              ${tools ? `<p><strong>Tools:</strong> ${tools}</p>` : ""}
-              ${skills ? `<p><strong>Key Skills:</strong> ${skills}</p>` : ""}
-              ${outcome ? `<p><strong>Outcome:</strong> ${outcome}</p>` : ""}
+            <!-- Packet Capture -->
+            <div class="project-card">
+                <h3>Packet Capture and Network Traffic Analysis</h3>
+                <p class="project-category">Network Analysis</p>
+                <p>
+                    Configured a VirtualBox home lab with Linux and Windows systems to capture and analyze
+                    network traffic using industry-standard tools.
+                </p>
+                <div class="project-details">
+                    <p><strong>Tools:</strong> tcpdump, Wireshark, VirtualBox, Kali Linux, Windows 10, Ubuntu</p>
+                    <p><strong>Key Skills:</strong> Network configuration, packet filtering, ICMP, DNS, TCP, protocol analysis, troubleshooting</p>
+                    <p><strong>Outcome:</strong> Demonstrated practical packet capture techniques and developed proficiency analyzing live network traffic.</p>
+                </div>
+                <a href="projects/network-packet-capture/" class="project-link">View Project →</a>
             </div>
-            <a href="${link}" class="project-link">🔗 ${linkText}</a>
-          `;
 
-          grid.appendChild(card);
-        });
-      } catch (error) {
-        console.error(error);
-        grid.innerHTML = `
-          <p>Failed to load projects from <code>/projects/projects.json</code>.</p>
-          <p>Open DevTools Console to see the exact error.</p>
-        `;
-      }
-    }
+            <!-- Reconnaissance -->
+            <div class="project-card">
+                <h3>Network Reconnaissance & Information Gathering</h3>
+                <p class="project-category">OSINT • DNS • WHOIS • Nmap</p>
+                <p>
+                    Performed reconnaissance using Google dorking, DNS enumeration, WHOIS lookups,
+                    and Nmap scanning to identify exposed data, domain infrastructure, and network
+                    behaviour across virtual machines.
+                </p>
+                <div class="project-details">
+                    <p><strong>Tools:</strong> Google Dorking, dig, WHOIS, Nmap, Ubuntu, Kali Linux</p>
+                    <p><strong>Key Skills:</strong> OSINT, DNS analysis, domain profiling, OS detection,
+                        service enumeration, stealth scanning, network mapping</p>
+                    <p><strong>Outcome:</strong> Demonstrated practical reconnaissance techniques and
+                        developed the ability to analyse domains, hosts, and network services using
+                        industry-standard tools.</p>
+                </div>
+                <a href="projects/network-reconnaissance-and-information-gathering/" class="project-link">View Project →</a>
+            </div>
 
-    loadProjects();
-  </script>
-</body>
-</html>
+            <!-- Linux Log Analysis -->
+            <div class="project-card">
+                <h3>Linux Log Analysis & Incident Detection Toolkit</h3>
+                <p class="project-category">SOC Analysis • Incident Response • Linux Forensics</p>
+                <p>
+                    Investigated Linux logs to detect suspicious activity, collected forensic evidence from media,
+                    and built shell scripts to automate failed login and pattern-based incident detection tasks.
+                </p>
+                <div class="project-details">
+                    <p><strong>Tools:</strong> Linux (Ubuntu), syslog, auth.log, dmesg, dd, dcfldd, grep, journalctl, Bash</p>
+                    <p><strong>Key Skills:</strong> Log analysis, SSH/authentication investigation, kernel warning review,
+                        forensic imaging, hashing, automation scripting</p>
+                    <p><strong>Outcome:</strong> Demonstrated practical SOC and incident-response workflow from detection
+                        to evidence preservation and automation.</p>
+                </div>
+                <a href="projects/linux-log-analysis-incident-detection-toolkit/" class="project-link">View Project →</a>
+            </div>
+
+            <!-- Apache Hardening -->
