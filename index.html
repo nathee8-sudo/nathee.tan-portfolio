@@ -1,61 +1,112 @@
-<section id="projects" class="projects">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nathee - Cybersecurity Portfolio</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <nav class="navbar">
     <div class="container">
-        <h2>Projects & Labs</h2>
+      <div class="logo">Nathee</div>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
 
-        <div class="projects-grid">
+  <section class="hero">
+    <div class="container">
+      <h1>Cybersecurity Portfolio</h1>
+      <p>Hands-on security labs, network analysis, and system hardening projects</p>
+    </div>
+  </section>
 
-            <!-- Packet Capture -->
-            <div class="project-card">
-                <h3>Packet Capture and Network Traffic Analysis</h3>
-                <p class="project-category">Network Analysis</p>
-                <p>
-                    Configured a VirtualBox home lab with Linux and Windows systems to capture and analyze
-                    network traffic using industry-standard tools.
-                </p>
-                <div class="project-details">
-                    <p><strong>Tools:</strong> tcpdump, Wireshark, VirtualBox, Kali Linux, Windows 10, Ubuntu</p>
-                    <p><strong>Key Skills:</strong> Network configuration, packet filtering, ICMP, DNS, TCP, protocol analysis, troubleshooting</p>
-                    <p><strong>Outcome:</strong> Demonstrated practical packet capture techniques and developed proficiency analyzing live network traffic.</p>
-                </div>
-                <a href="projects/network-packet-capture/" class="project-link">View Project →</a>
-            </div>
+  <section id="about" class="about">
+    <div class="container">
+      <h2>About Me</h2>
+      <p>
+        I'm an aspiring cybersecurity and IT professional who enjoys learning by
+        building and solving real technical problems.
+      </p>
+    </div>
+  </section>
 
-            <!-- Reconnaissance -->
-            <div class="project-card">
-                <h3>Network Reconnaissance & Information Gathering</h3>
-                <p class="project-category">OSINT • DNS • WHOIS • Nmap</p>
-                <p>
-                    Performed reconnaissance using Google dorking, DNS enumeration, WHOIS lookups,
-                    and Nmap scanning to identify exposed data, domain infrastructure, and network
-                    behaviour across virtual machines.
-                </p>
-                <div class="project-details">
-                    <p><strong>Tools:</strong> Google Dorking, dig, WHOIS, Nmap, Ubuntu, Kali Linux</p>
-                    <p><strong>Key Skills:</strong> OSINT, DNS analysis, domain profiling, OS detection,
-                        service enumeration, stealth scanning, network mapping</p>
-                    <p><strong>Outcome:</strong> Demonstrated practical reconnaissance techniques and
-                        developed the ability to analyse domains, hosts, and network services using
-                        industry-standard tools.</p>
-                </div>
-                <a href="projects/network-reconnaissance-and-information-gathering/" class="project-link">View Project →</a>
-            </div>
+  <section id="projects" class="projects">
+    <div class="container">
+      <h2>Projects & Labs</h2>
+      <div id="projects-grid" class="projects-grid"></div>
+    </div>
+  </section>
 
-            <!-- Linux Log Analysis -->
-            <div class="project-card">
-                <h3>Linux Log Analysis & Incident Detection Toolkit</h3>
-                <p class="project-category">SOC Analysis • Incident Response • Linux Forensics</p>
-                <p>
-                    Investigated Linux logs to detect suspicious activity, collected forensic evidence from media,
-                    and built shell scripts to automate failed login and pattern-based incident detection tasks.
-                </p>
-                <div class="project-details">
-                    <p><strong>Tools:</strong> Linux (Ubuntu), syslog, auth.log, dmesg, dd, dcfldd, grep, journalctl, Bash</p>
-                    <p><strong>Key Skills:</strong> Log analysis, SSH/authentication investigation, kernel warning review,
-                        forensic imaging, hashing, automation scripting</p>
-                    <p><strong>Outcome:</strong> Demonstrated practical SOC and incident-response workflow from detection
-                        to evidence preservation and automation.</p>
-                </div>
-                <a href="projects/linux-log-analysis-incident-detection-toolkit/" class="project-link">View Project →</a>
-            </div>
+  <section id="skills" class="skills">
+    <div class="container">
+      <h2>Skills</h2>
+      <ul class="skills-list">
+        <li>Linux Administration</li>
+        <li>Network Traffic Analysis</li>
+        <li>Wireshark / tcpdump</li>
+        <li>Web Server Hardening</li>
+        <li>Bash Scripting</li>
+        <li>System Troubleshooting</li>
+      </ul>
+    </div>
+  </section>
 
-            <!-- Apache Hardening -->
+  <section id="contact" class="contact">
+    <div class="container">
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:your-email@example.com">your-email@example.com</a></p>
+      <p>GitHub: <a href="https://github.com/nathee8-sudo" target="_blank" rel="noopener noreferrer">nathee8-sudo</a></p>
+    </div>
+  </section>
+
+  <script>
+    // EDIT ONLY THIS LIST: add every project folder here
+    const projects = [
+      {
+        title: "Packet Capture and Network Traffic Analysis",
+        category: "Network Analysis",
+        description: "Capture/analyze traffic with Wireshark and tcpdump in a home lab.",
+        tools: "tcpdump, Wireshark, VirtualBox, Kali Linux, Ubuntu, Windows 10",
+        skills: "ICMP, DNS, TCP, filtering, troubleshooting",
+        outcome: "Built practical packet analysis workflow.",
+        link: "projects/network-packet-capture/"
+      },
+      {
+        title: "Linux Hardening Lab",
+        category: "System Security",
+        description: "Secured Linux VM with least privilege, firewall, and audit checks.",
+        tools: "Ubuntu, ufw, fail2ban, ssh",
+        skills: "Hardening, access control, logging",
+        outcome: "Reduced attack surface and improved baseline security.",
+        link: "projects/linux-hardening/"
+      }
+    ];
+
+    const grid = document.getElementById("projects-grid");
+    grid.innerHTML = "";
+
+    projects.forEach((p) => {
+      const card = document.createElement("article");
+      card.className = "project-card";
+      card.innerHTML = `
+        <h3>${p.title}</h3>
+        <p class="project-category">${p.category}</p>
+        <p>${p.description}</p>
+        <div class="project-details">
+          <p><strong>Tools:</strong> ${p.tools}</p>
+          <p><strong>Key Skills:</strong> ${p.skills}</p>
+          <p><strong>Outcome:</strong> ${p.outcome}</p>
+        </div>
+        <a href="${p.link}" class="project-link">🔗 View Project</a>
+      `;
+      grid.appendChild(card);
+    });
+  </script>
+</body>
+</html>
