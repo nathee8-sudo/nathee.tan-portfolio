@@ -30,16 +30,71 @@
     <div class="container">
       <h2>About Me</h2>
       <p>
-        I'm an aspiring cybersecurity and IT professional who enjoys learning by
-        building and solving real technical problems.
+        I'm an aspiring cybersecurity and IT professional who enjoys learning by building
+        and solving real technical problems. I use home labs and hands-on projects to
+        develop practical skills in Linux administration, networking, web server security,
+        and packet analysis.
       </p>
+      <p><strong>Seeking opportunities in IT support, cybersecurity, SOC analysis, or network security.</strong></p>
     </div>
   </section>
 
   <section id="projects" class="projects">
     <div class="container">
       <h2>Projects & Labs</h2>
-      <div id="projects-grid" class="projects-grid"></div>
+      <div class="projects-grid">
+
+        <!-- PROJECT 1 -->
+        <article class="project-card">
+          <h3>Packet Capture and Network Traffic Analysis</h3>
+          <p class="project-category">Network Analysis</p>
+          <p>
+            Configured a VirtualBox home lab with Linux and Windows systems to capture and
+            analyze network traffic using industry-standard tools.
+          </p>
+          <div class="project-details">
+            <p><strong>Tools:</strong> tcpdump, Wireshark, VirtualBox, Kali Linux, Windows 10, Ubuntu</p>
+            <p><strong>Key Skills:</strong> Network configuration, packet filtering, ICMP, DNS, TCP, protocol analysis, troubleshooting</p>
+            <p><strong>Outcome:</strong> Demonstrated practical packet capture techniques and developed proficiency analyzing live network traffic.</p>
+          </div>
+          <a href="projects/network-packet-capture/" class="project-link">🔗 View Project</a>
+        </article>
+
+        <!-- PROJECT 2 -->
+        <article class="project-card">
+          <h3>Linux Hardening Lab</h3>
+          <p class="project-category">System Security</p>
+          <p>
+            Hardened a Linux VM by securing SSH, applying firewall rules, and improving
+            system logging and authentication controls.
+          </p>
+          <div class="project-details">
+            <p><strong>Tools:</strong> Ubuntu, UFW, Fail2ban, SSH, journalctl</p>
+            <p><strong>Key Skills:</strong> OS hardening, access control, service management, log analysis</p>
+            <p><strong>Outcome:</strong> Reduced attack surface and created a repeatable hardening checklist.</p>
+          </div>
+          <a href="projects/linux-hardening/" class="project-link">🔗 View Project</a>
+        </article>
+
+        <!-- PROJECT 3 -->
+        <article class="project-card">
+          <h3>Web Server Security Baseline</h3>
+          <p class="project-category">Web Security</p>
+          <p>
+            Built and secured a web server with TLS, security headers, and configuration
+            best practices for safer deployment.
+          </p>
+          <div class="project-details">
+            <p><strong>Tools:</strong> Nginx/Apache, OpenSSL, Linux</p>
+            <p><strong>Key Skills:</strong> HTTPS setup, configuration hardening, header security, validation testing</p>
+            <p><strong>Outcome:</strong> Deployed a hardened baseline suitable for small lab hosting.</p>
+          </div>
+          <a href="projects/web-server-security/" class="project-link">🔗 View Project</a>
+        </article>
+
+        <!-- COPY A PROJECT BLOCK ABOVE AND PASTE BELOW TO ADD MORE -->
+
+      </div>
     </div>
   </section>
 
@@ -60,53 +115,8 @@
   <section id="contact" class="contact">
     <div class="container">
       <h2>Contact</h2>
-      <p>Email: <a href="mailto:your-email@example.com">your-email@example.com</a></p>
-      <p>GitHub: <a href="https://github.com/nathee8-sudo" target="_blank" rel="noopener noreferrer">nathee8-sudo</a></p>
+      <p>Email: <a href="mailto:your-email@example.com">nathee8@gmail.com</a></p>
     </div>
   </section>
-
-  <script>
-    // EDIT ONLY THIS LIST: add every project folder here
-    const projects = [
-      {
-        title: "Packet Capture and Network Traffic Analysis",
-        category: "Network Analysis",
-        description: "Capture/analyze traffic with Wireshark and tcpdump in a home lab.",
-        tools: "tcpdump, Wireshark, VirtualBox, Kali Linux, Ubuntu, Windows 10",
-        skills: "ICMP, DNS, TCP, filtering, troubleshooting",
-        outcome: "Built practical packet analysis workflow.",
-        link: "projects/network-packet-capture/"
-      },
-      {
-        title: "Linux Hardening Lab",
-        category: "System Security",
-        description: "Secured Linux VM with least privilege, firewall, and audit checks.",
-        tools: "Ubuntu, ufw, fail2ban, ssh",
-        skills: "Hardening, access control, logging",
-        outcome: "Reduced attack surface and improved baseline security.",
-        link: "projects/linux-hardening/"
-      }
-    ];
-
-    const grid = document.getElementById("projects-grid");
-    grid.innerHTML = "";
-
-    projects.forEach((p) => {
-      const card = document.createElement("article");
-      card.className = "project-card";
-      card.innerHTML = `
-        <h3>${p.title}</h3>
-        <p class="project-category">${p.category}</p>
-        <p>${p.description}</p>
-        <div class="project-details">
-          <p><strong>Tools:</strong> ${p.tools}</p>
-          <p><strong>Key Skills:</strong> ${p.skills}</p>
-          <p><strong>Outcome:</strong> ${p.outcome}</p>
-        </div>
-        <a href="${p.link}" class="project-link">🔗 View Project</a>
-      `;
-      grid.appendChild(card);
-    });
-  </script>
 </body>
 </html>
