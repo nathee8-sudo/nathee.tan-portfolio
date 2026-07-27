@@ -6,7 +6,10 @@
     <title>Nathee - Cybersecurity Portfolio</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
+
+    <!-- NAVBAR -->
     <nav class="navbar">
         <div class="container">
             <div class="logo">Nathee</div>
@@ -19,6 +22,7 @@
         </div>
     </nav>
 
+    <!-- HERO -->
     <section class="hero">
         <div class="container">
             <h1>Cybersecurity Portfolio</h1>
@@ -26,6 +30,7 @@
         </div>
     </section>
 
+    <!-- ABOUT -->
     <section id="about" class="about">
         <div class="container">
             <h2>About Me</h2>
@@ -44,12 +49,14 @@
         </div>
     </section>
 
+    <!-- PROJECTS -->
     <section id="projects" class="projects">
         <div class="container">
             <h2>Projects & Labs</h2>
 
             <div class="projects-grid">
 
+                <!-- Packet Capture -->
                 <div class="project-card">
                     <h3>Packet Capture and Network Traffic Analysis</h3>
                     <p class="project-category">Network Analysis</p>
@@ -63,143 +70,3 @@
                         <p><strong>Outcome:</strong> Demonstrated practical packet capture techniques and developed proficiency analyzing live network traffic.</p>
                     </div>
                     <a href="projects/network-packet-capture/" class="project-link">View Project →</a>
-                </div>
-
-                <div class="project-card">
-                    <h3>Network Reconnaissance & Information Gathering</h3>
-                    <p class="project-category">OSINT • DNS • WHOIS • Nmap</p>
-                    <p>
-        Performed reconnaissance using Google dorking, DNS enumeration, WHOIS lookups,
-        and Nmap scanning to identify exposed data, domain infrastructure, and network
-        behaviour across virtual machines.
-    </p>
-    <div class="project-details">
-        <p><strong>Tools:</strong> Google Dorking, dig, WHOIS, Nmap, Ubuntu, Kali Linux</p>
-        <p><strong>Key Skills:</strong> OSINT, DNS analysis, domain profiling, OS detection,
-            service enumeration, stealth scanning, network mapping</p>
-        <p><strong>Outcome:</strong> Demonstrated practical reconnaissance techniques and
-            developed the ability to analyse domains, hosts, and network services using
-            industry-standard tools.</p>
-    </div>
-    <a href="projects/network-reconnaissance-and-information-gathering/" class="project-link">View Project →</a>
-</div>
-
-                <div class="project-card">
-                    <h3>Linux Log Analysis & Incident Detection Toolkit</h3>
-                    <p class="project-category">SOC Analysis • Incident Response • Linux Forensics</p>
-                    <p>
-                        Investigated Linux logs to detect suspicious activity, collected forensic evidence from media,
-                        and built shell scripts to automate failed login and pattern-based incident detection tasks.
-                    </p>
-                    <div class="project-details">
-                        <p><strong>Tools:</strong> Linux (Ubuntu), syslog, auth.log, dmesg, dd, dcfldd, grep, journalctl, Bash</p>
-                        <p><strong>Key Skills:</strong> Log analysis, SSH/authentication investigation, kernel warning review, forensic imaging, hashing, automation scripting</p>
-                        <p><strong>Outcome:</strong> Demonstrated practical SOC and incident-response workflow from detection to evidence preservation and automation.</p>
-                    </div>
-                    <a href="projects/linux-log-analysis-incident-detection-toolkit/" class="project-link">View Project →</a>
-                </div>
-                
-                <div class="project-card">
-                    <h3>Secure Apache Web Server Deployment</h3>
-                    <p class="project-category">Web Server Hardening</p>
-                    <p>
-                        Deployed and hardened an Apache web server on Ubuntu using HTTPS, SSL/TLS,
-                        UFW firewall rules, ModSecurity, ModEvasive, and Nmap validation scans.
-                    </p>
-                    <div class="project-details">
-                        <p><strong>Tools:</strong> Apache2, OpenSSL, UFW, ModSecurity, ModEvasive, Nmap, Ubuntu</p>
-                        <p><strong>Key Skills:</strong> Linux administration, SSL/TLS, firewall configuration, web server hardening, vulnerability validation</p>
-                        <p><strong>Outcome:</strong> Built a secured Apache server and validated the hardening changes using before-and-after scans.</p>
-                    </div>
-                    <a href="projects/secure-apache-webserver/" class="project-link">View Project →</a>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <div class="project-card">
-    <h3>Essential Eight Maturity Assessment & Hardening Lab</h3>
-    <p class="project-category">Cybersecurity Governance • System Hardening • Risk Reduction</p>
-    <p>
-        Built a hands-on lab to assess and improve a small enterprise environment against the
-        ACSC Essential Eight mitigation strategies, with before-and-after validation of security posture.
-    </p>
-    <div class="project-details">
-        <p><strong>Tools:</strong> Windows 10/11, Ubuntu, Microsoft Defender, Group Policy, PowerShell, Linux CLI, VirtualBox</p>
-        <p><strong>Key Skills:</strong> Patch management, application control, MFA, macro hardening, least privilege, backup validation, security baselining</p>
-        <p><strong>Outcome:</strong> Produced a practical uplift plan mapped to Essential Eight controls and demonstrated measurable hardening improvements.</p>
-    </div>
-    <a href="projects/essential-eight-maturity-assessment/" class="project-link">View Project →</a>
-</div>
-    
-    <section id="skills" class="skills">
-        <div class="container">
-            <h2>Technical Skills</h2>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h3>Security Tools</h3>
-                    <ul>
-                        <li>Wireshark</li>
-                        <li>tcpdump</li>
-                        <li>Nmap</li>
-                        <li>ModSecurity</li>
-                        <li>ModEvasive</li>
-                        <li>UFW Firewall</li>
-                    </ul>
-                </div>
-
-                <div class="skill-category">
-                    <h3>Systems & Networking</h3>
-                    <ul>
-                        <li>Linux Administration</li>
-                        <li>Windows 10</li>
-                        <li>VirtualBox</li>
-                        <li>Apache2</li>
-                        <li>Network Protocols</li>
-                        <li>Packet Analysis</li>
-                    </ul>
-                </div>
-
-                <div class="skill-category">
-                    <h3>Security Concepts</h3>
-                    <ul>
-                        <li>SSL/TLS</li>
-                        <li>PKI</li>
-                        <li>Firewall Rules</li>
-                        <li>Web Server Hardening</li>
-                        <li>Vulnerability Validation</li>
-                        <li>Security Documentation</li>
-                    </ul>
-                </div>
-
-                <div class="skill-category">
-                    <h3>Certifications & Frameworks</h3>
-                    <ul>
-                        <li>CompTIA Security+</li>
-                        <li>OWASP Top 10</li>
-                        <li>NIST Frameworks</li>
-                        <li>Cyber Kill Chain</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2>Get In Touch</h2>
-            <p>Interested in discussing IT or cybersecurity opportunities? Let's connect.</p>
-            <div class="contact-links">
-                <a href="https://github.com/nathee8-sudo" class="contact-link">GitHub</a>
-                <a href="https://linkedin.com/in/nathee" class="contact-link">LinkedIn</a>
-                <a href="mailto:your.email@example.com" class="contact-link">Email</a>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <p>&copy; 2026 Nathee's Cybersecurity Portfolio. All rights reserved.</p>
-    </footer>
-</body>
-</html>
