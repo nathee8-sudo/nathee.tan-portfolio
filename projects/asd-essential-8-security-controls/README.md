@@ -198,8 +198,8 @@ Browser hardening prevents malicious scripts, ads, and insecure connections.
 ![Exceptions](./Picture35.png)
 ![Exceptions](./Picture36.png)
 
-#### PUA blocking
-![PUA blocking](./Picture37.png)
+#### Potentially Unwanted Application (PUA) blocking
+![Potentially Unwanted Application (PUA) blocking](./Picture37.png)
 
 #### Enhanced Security Mode
 ![Enhanced Security Mode](./Picture38.png)
