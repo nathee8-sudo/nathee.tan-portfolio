@@ -1,72 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nathee - Cybersecurity Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nathee - Cybersecurity Portfolio</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
-
 <body>
 
-    <!-- NAVBAR -->
-    <nav class="navbar">
-        <div class="container">
-            <div class="logo">Nathee</div>
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="container">
+      <div class="logo">Nathee</div>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
 
-    <!-- HERO -->
-    <section class="hero">
-        <div class="container">
-            <h1>Cybersecurity Portfolio</h1>
-            <p>Hands-on security labs, network analysis, and system hardening projects</p>
-        </div>
-    </section>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <h1>Cybersecurity Portfolio</h1>
+      <p>Hands-on security labs, network analysis, and system hardening projects</p>
+    </div>
+  </section>
 
-    <!-- ABOUT -->
-    <section id="about" class="about">
-        <div class="container">
-            <h2>About Me</h2>
-            <p>
-                I'm an aspiring cybersecurity and IT professional who enjoys learning by
-                building and solving real technical problems. I use home labs and hands-on
-                projects to develop practical skills in Linux administration, networking,
-                web server security, and packet analysis. This portfolio showcases the
-                projects I've built, the skills I've developed, and my approach to
-                documenting and validating technical work as I continue building my career
-                in IT and cybersecurity.
-            </p>
-            <p>
-                <strong>Seeking opportunities in IT support, cybersecurity, SOC analysis, or network security.</strong>
-            </p>
-        </div>
-    </section>
+  <!-- ABOUT -->
+  <section id="about" class="about">
+    <div class="container">
+      <h2>About Me</h2>
+      <p>
+        I'm an aspiring cybersecurity and IT professional who enjoys learning by
+        building and solving real technical problems. I use home labs and hands-on
+        projects to develop practical skills in Linux administration, networking,
+        web server security, and packet analysis. This portfolio showcases the
+        projects I've built, the skills I've developed, and my approach to
+        documenting and validating technical work as I continue building my career
+        in IT and cybersecurity.
+      </p>
+      <p>
+        <strong>Seeking opportunities in IT support, cybersecurity, SOC analysis, or network security.</strong>
+      </p>
+    </div>
+  </section>
 
-    <!-- PROJECTS -->
-    <section id="projects" class="projects">
-        <div class="container">
-            <h2>Projects & Labs</h2>
+  <!-- PROJECTS -->
+  <section id="projects" class="projects">
+    <div class="container">
+      <h2>Projects & Labs</h2>
+      <div id="projects-grid" class="projects-grid">
+        <p>Loading projects...</p>
+      </div>
+    </div>
+  </section>
 
-            <div class="projects-grid">
+  <!-- SKILLS -->
+  <section id="skills" class="skills">
+    <div class="container">
+      <h2>Skills</h2>
+      <ul class="skills-list">
+        <li>Linux Administration</li>
+        <li>Network Traffic Analysis</li>
+        <li>Wireshark / tcpdump</li>
+        <li>Web Server Hardening</li>
+        <li>Bash Scripting</li>
+        <li>System Troubleshooting</li>
+      </ul>
+    </div>
+  </section>
 
-                <!-- Packet Capture -->
-                <div class="project-card">
-                    <h3>Packet Capture and Network Traffic Analysis</h3>
-                    <p class="project-category">Network Analysis</p>
-                    <p>
-                        Configured a VirtualBox home lab with Linux and Windows systems to capture and analyze
-                        network traffic using industry-standard tools.
-                    </p>
-                    <div class="project-details">
-                        <p><strong>Tools:</strong> tcpdump, Wireshark, VirtualBox, Kali Linux, Windows 10, Ubuntu</p>
-                        <p><strong>Key Skills:</strong> Network configuration, packet filtering, ICMP, DNS, TCP, protocol analysis, troubleshooting</p>
-                        <p><strong>Outcome:</strong> Demonstrated practical packet capture techniques and developed proficiency analyzing live network traffic.</p>
-                    </div>
-                    <a href="projects/network-packet-capture/" class="project-link">View Project →</a>
+  <!-- CONTACT -->
+  <section id="contact" class="contact">
+    <div class="container">
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:your-email@example.com">your-email@example.com</a></p>
+      <p>GitHub: <a href="https://github.com/nathee8-sudo" target="_blank" rel="noopener noreferrer">nathee8-sudo</a></p>
+    </div>
+  </section>
+
+  <script>
+    async function loadProjects() {
+      const grid = document.getElementById("projects-grid");
+
+      try {
+        const response = await fetch("./projects/projects.json", { cache: "no-store" });
+        if (!response.ok) throw new Error("Unable to load projects JSON.");
+
+        const projects = await response.json();
+
+        if (!Array.isArray(projects) || projects.length === 0) {
+          grid.innerHTML = "<p>No projects found.</p>";
+          return;
+        }
+
+        grid.innerHTML = "";
+
+        projects.forEach((project) => {
+          const card = document.createElement("article");
+          card.className = "project-card";
+
+          const title = project.title || "Untitled Project";
+          const category = project.category || "Project";
+          const description = project.description || "";
+          const tools = Array.isArray(project.tools) ? project.tools.join(", ") : (project.tools || "");
+          const skills = Array.isArray(project.skills) ? project.skills.join(", ") : (project.skills || "");
+          const outcome = project.outcome || "";
+          const link = project.link || "#";
+          const linkText = project.linkText || "View Project";
+
+          card.innerHTML = `
+            <h3>${title}</h3>
+            <p class="project-category">${category}</p>
+            <p>${description}</p>
+            <div class="project-details">
+              ${tools ? `<p><strong>Tools:</strong> ${tools}</p>` : ""}
+              ${skills ? `<p><strong>Key Skills:</strong> ${skills}</p>` : ""}
+              ${outcome ? `<p><strong>Outcome:</strong> ${outcome}</p>` : ""}
+            </div>
+            <a href="${link}" class="project-link">🔗 ${linkText}</a>
+          `;
+
+          grid.appendChild(card);
+        });
+      } catch (error) {
+        console.error(error);
+        grid.innerHTML = "<p>Failed to load projects. Please check <code>projects/projects.json</code>.</p>";
+      }
+    }
+
+    loadProjects();
+  </script>
+</body>
+</html>
