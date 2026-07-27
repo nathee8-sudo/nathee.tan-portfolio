@@ -91,15 +91,32 @@ Keeping applications patched prevents exploitation of known vulnerabilities.
 - Demonstrated patching workflow using text files
 
 #### Screenshots
-- `file1.txt`
-- `file2.txt`
-- `man diff`
-- `diff -y` output
-- `diff -c` output
-- `man patch`
-- Creating patch file
-- Running patch
-- Patched file result
+##### `file1.txt`
+![file1.txt](./Picture13.png)
+
+##### `file2.txt`
+![file2.txt](./Picture14.png)
+
+##### `man diff`
+![man diff](./Picture15.png)
+
+##### `diff -y` output
+![diff -y output](./Picture16.png)
+
+##### `diff -c` output
+![diff -c output](./Picture17.png)
+
+##### `man patch`
+![man patch](./Picture18.png)
+
+##### Creating patch file
+![Creating patch file](./Picture19.png)
+
+##### Running patch
+![Running patch](./Picture20.png)
+
+##### Patched file result
+![Patched file result](./Picture21.png)
 
 #### Outcome
 Understanding of patching workflows and version control using Linux tools.
@@ -202,3 +219,4 @@ Ran:
 ```bash
 sudo apt-get update
 sudo apt-get upgrade
+```
