@@ -169,7 +169,7 @@ Browser hardening prevents malicious scripts, ads, and insecure connections.
 - Enabled **Potentially Unwanted App Blocking**
 - Enabled **Enhanced Security Mode**
 
-#### Screenshots
+#### Screenshots:
 
 **Chrome**
 ##### Privacy & Security
