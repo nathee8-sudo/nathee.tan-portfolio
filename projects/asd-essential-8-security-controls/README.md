@@ -64,11 +64,11 @@ Application whitelisting ensures only approved applications can run, reducing ma
 ![AppLocker rule enforcement](./Picture6.png)
 
 #### Software Restriction Policies
-![Software Restriction Policies](./picture12.png)
+![Software Restriction Policies](./Picture12.png)
 
 #### Default Rules creation
-![Default Rules creation](./picture7.png)
-![Default Rules creation](./picture10.png)
+![Default Rules creation](./Picture7.png)
+![Default Rules creation](./Picture10.png)
 
 #### Automatically Generated Rules
 ![Automatically Generated Rules](./Picture8.png).
