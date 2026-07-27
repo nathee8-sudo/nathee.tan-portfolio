@@ -188,11 +188,21 @@ Browser hardening prevents malicious scripts, ads, and insecure connections.
 ![Permissions](./Picture32.png)
 
 **Edge**
-- Privacy, Search & Services
-- Tracking Prevention
-- Exceptions
-- PUA blocking
-- Enhanced Security Mode
+#### Privacy, Search & Services
+![Privacy, Search & Services](./Picture33.png)
+
+#### Tracking Prevention
+![Tracking Prevention](./Picture34.png)
+
+#### Exceptions
+![Exceptions](./Picture35.png)
+![Exceptions](./Picture36.png)
+
+#### PUA blocking
+![PUA blocking](./Picture37.png)
+
+#### Enhanced Security Mode
+![Enhanced Security Mode](./Picture38.png)
 
 #### Outcome
 Browsers hardened against common web-based threats.
