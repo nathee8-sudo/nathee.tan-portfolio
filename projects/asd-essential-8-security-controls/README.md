@@ -171,11 +171,21 @@ Browser hardening prevents malicious scripts, ads, and insecure connections.
 
 #### Screenshots
 **Chrome**
-- Privacy & Security
-- Enhanced Protection
-- Secure Connections
-- Third-party cookies
-- Permissions
+
+##### Privacy & Security
+![Privacy & Security](./Picture28.png)
+
+##### Ensuring Enhanced Protection is ON
+![Enhanced Protection](./Picture29.png)
+
+##### Secure Connections
+![Secure Connections](./Picture30.png)
+
+##### Third-party cookies
+![Third-party cookies](./Picture31.png)
+
+##### Permissions
+![Permissions](./Picture32.png)
 
 **Edge**
 - Privacy, Search & Services
