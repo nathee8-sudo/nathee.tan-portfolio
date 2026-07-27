@@ -170,8 +170,8 @@ Browser hardening prevents malicious scripts, ads, and insecure connections.
 - Enabled **Enhanced Security Mode**
 
 #### Screenshots
-**Chrome**
 
+**Chrome**
 ##### Privacy & Security
 ![Privacy & Security](./Picture28.png)
 
