@@ -135,10 +135,17 @@ Macros can contain malicious code. Disabling them prevents malware execution.
 - Reviewed trusted locations
 
 #### Screenshots
-- Options → Trust Center
-- Trust Center Settings
-- Macro Settings
-- Trusted Locations
+##### Options -> Trust Center
+![Options -> Trust Center](./Picture22.png)
+
+##### Trust Center Settings
+![Trust Center Settings](./Picture23.png)
+
+##### Macro Settings
+![Macro Settings](./Picture24.png)
+
+##### Trusted Locations
+![Trusted Locations](./Picture25.png)
 
 #### Outcome
 Reduced risk of macro-based malware.
