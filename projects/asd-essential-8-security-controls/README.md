@@ -60,12 +60,12 @@ Application whitelisting ensures only approved applications can run, reducing ma
 ##### Trusted Publishers
 ![Trusted Publishers](./Picture5.png)
 
-##### Automatically Generated Rules
-![Automatically Generated Rules](./Picture6.png)
+##### AppLocker rule enforcement
+![AppLocker rule enforcement](./Picture6.png)
 
 - Software Restriction Policies
-- AppLocker rule enforcement
 - Default Rules creation
+- Automatically Generated Rules
 
 #### Outcome
 Only authorised applications can run, significantly reducing the attack surface.
