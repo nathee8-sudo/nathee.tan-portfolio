@@ -44,15 +44,28 @@ Application whitelisting ensures only approved applications can run, reducing ma
 - Automatically generated executable rules for **Program Files**
 
 #### Screenshots
-- Local Security Policy
+
+##### Local Security Policy
+![Local Security Policy](./Picture1.png)
+
+##### Security Levels (Disallowed)
+![Security Levels (Disallowed)](./Picture2.png)
+
+##### Warning prompt
+![Warning prompt](./Picture3.png)
+
+##### Enforcement Properties
+![Enforcement Properties](./Picture4.png)
+
+##### Trusted Publishers
+![Trusted Publishers](./Picture5.png)
+
+##### Automatically Generated Rules
+![Automatically Generated Rules](./Picture6.png)
+
 - Software Restriction Policies
-- Security Levels (Disallowed)
-- Warning prompt
-- Enforcement Properties
-- Trusted Publishers
 - AppLocker rule enforcement
 - Default Rules creation
-- Automatically Generated Rules
 
 #### Outcome
 Only authorised applications can run, significantly reducing the attack surface.
