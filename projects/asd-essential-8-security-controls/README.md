@@ -222,13 +222,27 @@ Least privilege reduces the impact of compromised accounts.
 - Configured directory and file permissions
 
 #### Screenshots
-- `addgroup`
-- `adduser`
-- group membership
-- directory creation
-- `chgrp`
-- directory permissions
-- file permissions
+
+#### 'addgroup'
+!['addgroup'](./Picture39.png)
+
+#### `adduser`
+!['adduser'](./Picture40.png)
+
+#### group membership
+![group membership](./Picture41.png)
+
+#### directory creation
+![direcotry creation](./Picture42.png)
+
+#### `chgrp`
+!['chgrp'](./Picture43.png)
+
+#### directory permissions
+![directory permissions](./Picture44.png)
+
+#### file permissions
+![file permissions](./Picture45.png)
 
 #### Outcome
 Proper separation of privileges and secure access control.
