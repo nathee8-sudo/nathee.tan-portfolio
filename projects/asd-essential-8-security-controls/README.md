@@ -255,6 +255,7 @@ Patching operating systems is critical because updates fix security vulnerabilit
 #### Windows
 
 Checked for updates under **Update & Security**
+
 ![Windows](./Picture46.png)
 
 #### Linux
