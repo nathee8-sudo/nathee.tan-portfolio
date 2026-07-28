@@ -253,8 +253,9 @@ Proper separation of privileges and secure access control.
 Patching operating systems is critical because updates fix security vulnerabilities, improve stability, and prevent attackers from exploiting weaknesses. Updates also improve performance and may include compatibility improvements for software and hardware.
 
 #### Windows
-- Used **Windows Update**
-- Checked for updates under **Update & Security**
+
+Checked for updates under **Update & Security**
+![Windows](./Picture46.png)
 
 #### Linux
 Ran:
@@ -262,12 +263,12 @@ Ran:
 ```bash
 sudo apt-get update
 ```
-![Linux](./Picture46.png)
+![Linux](./Picture47.png)
 
 ```bash
 sudo apt-get upgrade
 ```
-![Linux](./Picture47.png)
+![Linux](./Picture48.png)
 
 #### Outcome
 Both Windows and Linux systems were successfully updated to the latest available patches. This reduces security vulnerabilities, improves system stability, and ensures the operating systems are protected against known exploits. Regular patching helps maintain smooth device performance and lowers the risk of attackers exploiting outdated software.
