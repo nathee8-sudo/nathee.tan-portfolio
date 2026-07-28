@@ -290,18 +290,23 @@ Updated Ubuntu 22.04
 #### Screenshots
 
 Updating Ubuntu
+
 ![Updating Ubuntu](./Picture49.png)
 
 Installing Google-authenticator PAM module
+
 ![Installing Google-authenticator PAM module](./Picture50.png)
 
 Google Authenticator QR Code
+
 ![Google Authenticator QR Code](./Picture51.png)
 
 Enabling 2FA for sudo
+
 ![Enabling 2FA for sudo](./Picture52.png)
 
 SSH MFA configuration
+
 ![SSH MFA configuration](./Picture53.png)
 ![SSH MFA configuration](./Picture54.png)
 
