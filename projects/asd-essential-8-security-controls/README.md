@@ -261,8 +261,16 @@ Ran:
 
 ```bash
 sudo apt-get update
+```
+![Linux](./Picture46.png)
+
+```bash
 sudo apt-get upgrade
 ```
+![Linux](./Picture47.png)
+
+#### Outcome
+Both Windows and Linux systems were successfully updated to the latest available patches. This reduces security vulnerabilities, improves system stability, and ensures the operating systems are protected against known exploits. Regular patching helps maintain smooth device performance and lowers the risk of attackers exploiting outdated software.
 
 ### 7. Multi-factor Authentication (MFA)
 #### Concept
