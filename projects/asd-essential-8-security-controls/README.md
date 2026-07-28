@@ -263,9 +263,12 @@ Ran:
 
 ```bash
 sudo apt-get update
+```
 ![Linux](./Picture47.png)
 
+```bash
 sudo apt-get upgrade
+```
 ![Linux](./Picture48.png)
 
 ```
