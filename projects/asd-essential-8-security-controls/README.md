@@ -250,7 +250,7 @@ Proper separation of privileges and secure access control.
 ---
 
 ### 💻 6. Patch Operating Systems
-Patching operating systems is critical because updates fix security vulnerabilities, improve stability, and prevent attackers from exploiting weaknesses. Updates also improve performance and may introduce new features, making systems more secure and reliable:
+Patching operating systems is critical because updates fix security vulnerabilities, improve stability, and prevent attackers from exploiting weaknesses. Updates also improve performance and may include compatibility improvements for software and hardware.
 
 #### Windows
 - Used **Windows Update**
@@ -263,3 +263,100 @@ Ran:
 sudo apt-get update
 sudo apt-get upgrade
 ```
+
+### 7. Multi-factor Authentication (MFA)
+Concept
+Multi-factor Authentication adds an extra layer of protection by requiring both a password and a second factor (such as a code from Google Authenticator). This prevents attackers from accessing accounts even if the password is compromised.
+
+Implementation
+Updated Ubuntu 22.04
+
+Installed the Google-authenticator PAM module
+
+Installed the Google Authenticator app on smartphone
+
+Generated and scanned the QR code
+
+Enabled 2FA for sudo
+
+Tested two-factor login
+
+Configured MFA for SSH
+
+Screenshots
+Updating Ubuntu
+[Looks like the result wasn't safe to show. Let's switch things up and try something else!]
+
+Installing Google-authenticator PAM module
+[Looks like the result wasn't safe to show. Let's switch things up and try something else!]
+
+Google Authenticator QR Code
+[Looks like the result wasn't safe to show. Let's switch things up and try something else!]
+
+Enabling 2FA for sudo
+[Looks like the result wasn't safe to show. Let's switch things up and try something else!]
+
+Testing MFA login
+[Looks like the result wasn't safe to show. Let's switch things up and try something else!]
+
+SSH MFA configuration
+[Looks like the result wasn't safe to show. Let's switch things up and try something else!]
+
+Outcome
+Ubuntu now requires a second factor for authentication, significantly reducing the risk of unauthorised access.
+
+💾 8. Daily Backups
+Concept
+Backups ensure important data can be restored after incidents such as ransomware, accidental deletion, or system failure. The tar command is used to create archive files and preserve directory structures for backup purposes.
+
+Implementation
+Using tar for backups
+
+Created a new directory and three text files
+
+Checked directory path using pwd
+
+Ran the backup command:
+
+bash
+tar -cvpf systembackup.tar /home/nathee-tan/lab9.3
+Verified the backup file using ls
+
+Scheduling weekly backups (cron)
+
+Opened cron editor using:
+
+bash
+crontab -e
+Added a cron job to run every Friday at 18:59
+
+Saved and exited
+
+Screenshots
+Creating directory and files
+[Looks like the result wasn't safe to show. Let's switch things up and try something else!]
+
+Checking directory path with pwd
+[Looks like the result wasn't safe to show. Let's switch things up and try something else!]
+
+Running tar backup
+[Looks like the result wasn't safe to show. Let's switch things up and try something else!]
+
+Backup file created
+[Looks like the result wasn't safe to show. Let's switch things up and try something else!]
+
+Opening crontab
+[Looks like the result wasn't safe to show. Let's switch things up and try something else!]
+
+Weekly backup cron job
+[Looks like the result wasn't safe to show. Let's switch things up and try something else!]
+
+Outcome
+Backups are created and scheduled automatically, ensuring data can be restored quickly and reliably.
+
+Conclusion
+This project demonstrates the full implementation of the ASD Essential 8 across Windows and Linux systems. Each control was configured, tested, and documented with screenshots to show practical understanding of system hardening, patching, access control, MFA, and backup strategies.
+
+By completing all eight controls — Application Whitelisting, Patch Applications, Macro Settings, User Application Hardening, Restrict Administrative Privileges, Patch Operating Systems, Multi-factor Authentication, and Daily Backups — this environment now reflects a significantly improved security posture aligned with ACSC guidance.
+
+The hands-on activities performed in this lab highlight real-world cybersecurity skills including OS administration, Linux command-line usage, privilege management, secure configuration, and backup automation.
