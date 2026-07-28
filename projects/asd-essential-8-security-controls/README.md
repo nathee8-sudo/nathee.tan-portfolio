@@ -331,19 +331,25 @@ Backups ensure important data can be restored after incidents such as ransomware
 - Saved and exited
 
 #### Screenshots
+
 Creating directory and files
+
 ![Creating directory and files](./Picture55.png)
 
 Checking directory path with pwd
+
 ![Checking directory path with pwd](./Picture56.png)
 
 Running tar backup and file creation
+
 ![Running tar backup](./Picture57.png)
 
 Opening crontab
+
 ![Opening crontab](./Picture58.png)
 
 Weekly backup cron job
+
 ![Weekly backup cron job](./Picture59.png)
 
 #### Outcome
@@ -354,4 +360,4 @@ This project demonstrates the full implementation of the ASD Essential 8 across 
 
 By completing all eight controls — Application Whitelisting, Patch Applications, Macro Settings, User Application Hardening, Restrict Administrative Privileges, Patch Operating Systems, Multi-factor Authentication, and Daily Backups — this environment now reflects a significantly improved security posture aligned with ACSC guidance.
 
-The hands-on activities performed in this lab highlight real-world cybersecurity skills including OS administration, Linux command-line usage, privilege management, secure configuration, and backup automation.
+The hands-on activities performed in this project highlight real-world cybersecurity skills including OS administration, Linux command-line usage, privilege management, secure configuration, and backup automation.
