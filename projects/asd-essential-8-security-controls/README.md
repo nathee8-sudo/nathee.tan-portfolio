@@ -332,22 +332,19 @@ Backups ensure important data can be restored after incidents such as ransomware
 
 #### Screenshots
 Creating directory and files
-[Looks like the result wasn't safe to show. Let's switch things up and try something else!]
+![Creating directory and files](./Picture55.png)
 
 Checking directory path with pwd
-[Looks like the result wasn't safe to show. Let's switch things up and try something else!]
+![Checking directory path with pwd](./Picture56.png)
 
-Running tar backup
-[Looks like the result wasn't safe to show. Let's switch things up and try something else!]
-
-Backup file created
-[Looks like the result wasn't safe to show. Let's switch things up and try something else!]
+Running tar backup and file creation
+![Running tar backup](./Picture57.png)
 
 Opening crontab
-[Looks like the result wasn't safe to show. Let's switch things up and try something else!]
+![Opening crontab](./Picture58.png)
 
 Weekly backup cron job
-[Looks like the result wasn't safe to show. Let's switch things up and try something else!]
+![Weekly backup cron job](./Picture59.png)
 
 #### Outcome
 Backups are created and scheduled automatically, ensuring data can be restored quickly and reliably.
