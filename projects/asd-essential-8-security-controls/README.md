@@ -250,6 +250,7 @@ Proper separation of privileges and secure access control.
 ---
 
 ### 💻 6. Patch Operating Systems
+Patching operating systems is critical because updates fix security vulnerabilities, improve stability, and prevent attackers from exploiting weaknesses. Updates also improve performance and may introduce new features, making systems more secure and reliable:
 
 #### Windows
 - Used **Windows Update**
