@@ -256,6 +256,7 @@ Patching operating systems is critical because updates fix security vulnerabilit
 
 #### Windows
 Checked for updates under **Update & Security**
+
 ![Windows](./Picture46.png)
 
 #### Linux
@@ -272,6 +273,8 @@ sudo apt-get upgrade
 ![Linux](./Picture48.png)
 
 ```
+```
+
 #### Outcome
 Both Windows and Linux systems were successfully updated to the latest available patches. This reduces security vulnerabilities, improves system stability, and ensures the operating systems are protected against known exploits. Regular patching helps maintain smooth device performance and lowers the risk of attackers exploiting outdated software.
 
