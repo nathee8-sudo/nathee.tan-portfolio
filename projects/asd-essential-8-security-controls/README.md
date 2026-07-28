@@ -279,7 +279,7 @@ Both Windows and Linux systems were successfully updated to the latest available
 Multi-factor Authentication adds an extra layer of protection by requiring both a password and a second factor (such as a code from Google Authenticator). This prevents attackers from accessing accounts even if the password is compromised.
 
 #### Implementation
-- Updated Ubuntu 22.04
+Updated Ubuntu 22.04
 - Installed the Google-authenticator PAM module
 - Installed the Google Authenticator app on smartphone
 - Generated and scanned the QR code
@@ -288,23 +288,22 @@ Multi-factor Authentication adds an extra layer of protection by requiring both 
 - Configured MFA for SSH
 
 #### Screenshots
+
 Updating Ubuntu
-[Looks like the result wasn't safe to show. Let's switch things up and try something else!]
+![Updating Ubuntu](./Picture49.png)
 
 Installing Google-authenticator PAM module
-[Looks like the result wasn't safe to show. Let's switch things up and try something else!]
+![Installing Google-authenticator PAM module](./Picture50.png)
 
 Google Authenticator QR Code
-[Looks like the result wasn't safe to show. Let's switch things up and try something else!]
+![Google Authenticator QR Code](./Picture51.png)
 
 Enabling 2FA for sudo
-[Looks like the result wasn't safe to show. Let's switch things up and try something else!]
-
-Testing MFA login
-[Looks like the result wasn't safe to show. Let's switch things up and try something else!]
+![Enabling 2FA for sudo](./Picture52.png)
 
 SSH MFA configuration
-[Looks like the result wasn't safe to show. Let's switch things up and try something else!]
+![SSH MFA configuration](./Picture53.png)
+![SSH MFA configuration](./Picture54.png)
 
 #### Outcome
 Ubuntu now requires a second factor for authentication, significantly reducing the risk of unauthorised access.
