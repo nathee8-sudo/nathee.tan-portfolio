@@ -252,50 +252,30 @@ Proper separation of privileges and secure access control.
 ### 💻 6. Patch Operating Systems
 Patching operating systems is critical because updates fix security vulnerabilities, improve stability, and prevent attackers from exploiting weaknesses. Updates also improve performance and may include compatibility improvements for software and hardware.
 
-#### Screenshots
-
 #### Windows
-Checked for updates under **Update & Security**
-
-![Windows](./Picture46.png)
+- Used **Windows Update**
+- Checked for updates under **Update & Security**
 
 #### Linux
 Ran:
 
 ```bash
 sudo apt-get update
-```
-![Linux](./Picture47.png)
-
-```bash
 sudo apt-get upgrade
 ```
-![Linux](./Picture48.png)
-
-```
-```
-
-#### Outcome
-Both Windows and Linux systems were successfully updated to the latest available patches. This reduces security vulnerabilities, improves system stability, and ensures the operating systems are protected against known exploits. Regular patching helps maintain smooth device performance and lowers the risk of attackers exploiting outdated software.
 
 ### 7. Multi-factor Authentication (MFA)
 #### Concept
 Multi-factor Authentication adds an extra layer of protection by requiring both a password and a second factor (such as a code from Google Authenticator). This prevents attackers from accessing accounts even if the password is compromised.
 
 #### Implementation
-Updated Ubuntu 22.04
-
-Installed the Google-authenticator PAM module
-
-Installed the Google Authenticator app on smartphone
-
-Generated and scanned the QR code
-
-Enabled 2FA for sudo
-
-Tested two-factor login
-
-Configured MFA for SSH
+- Updated Ubuntu 22.04
+- Installed the Google-authenticator PAM module
+- Installed the Google Authenticator app on smartphone
+- Generated and scanned the QR code
+- Enabled 2FA for sudo
+- Tested two-factor login
+- Configured MFA for SSH
 
 #### Screenshots
 Updating Ubuntu
@@ -324,27 +304,17 @@ Ubuntu now requires a second factor for authentication, significantly reducing t
 Backups ensure important data can be restored after incidents such as ransomware, accidental deletion, or system failure. The tar command is used to create archive files and preserve directory structures for backup purposes.
 
 #### Implementation
-Using tar for backups
-
-Created a new directory and three text files
-
-Checked directory path using pwd
-
-Ran the backup command:
-
-bash
-tar -cvpf systembackup.tar /home/nathee-tan/lab9.3
-Verified the backup file using ls
-
-Scheduling weekly backups (cron)
-
-Opened cron editor using:
-
-bash
-crontab -e
-Added a cron job to run every Friday at 18:59
-
-Saved and exited
+- Using tar for backups
+- Created a new directory and three text files
+- Checked directory path using `pwd`
+- Ran the backup command:
+  - `tar -cvpf systembackup.tar /home/nathee-tan/lab9.3`
+- Verified the backup file using `ls`
+- Scheduling weekly backups (cron)
+- Opened cron editor using:
+  - `crontab -e`
+- Added a cron job to run every Friday at 18:59
+- Saved and exited
 
 #### Screenshots
 Creating directory and files
