@@ -252,17 +252,25 @@ Proper separation of privileges and secure access control.
 ### 💻 6. Patch Operating Systems
 Patching operating systems is critical because updates fix security vulnerabilities, improve stability, and prevent attackers from exploiting weaknesses. Updates also improve performance and may include compatibility improvements for software and hardware.
 
+#### Screenshots
+
 #### Windows
-- Used **Windows Update**
-- Checked for updates under **Update & Security**
+Checked for updates under **Update & Security**
+![Windows](./Picture46.png)
 
 #### Linux
 Ran:
 
 ```bash
 sudo apt-get update
+![Linux](./Picture47.png)
+
 sudo apt-get upgrade
+![Linux](./Picture48.png)
+
 ```
+#### Outcome
+Both Windows and Linux systems were successfully updated to the latest available patches. This reduces security vulnerabilities, improves system stability, and ensures the operating systems are protected against known exploits. Regular patching helps maintain smooth device performance and lowers the risk of attackers exploiting outdated software.
 
 ### 7. Multi-factor Authentication (MFA)
 #### Concept
